@@ -1,0 +1,106 @@
+.mainNav {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 3.6rem;
+
+    background-color: var(--header-colour);
+
+    box-shadow: 0 0 .5em var(--shadow-colour), 0 0 1em rgba(0, 0, 0, 0.5);
+
+    display: flex;
+}
+header {
+    margin-top: 4rem;
+}
+
+
+.homepageLink {
+    padding: 1rem;
+
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary-text-colour);
+}
+.headerHighlight {
+    padding: 0.6rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-size: 1.1rem;
+
+    transition: background-color 0.5s;
+    background-color: rgba(0, 0, 0, 0);
+}
+.headerHighlight:hover {
+    transition: background-color 0.5s;
+    background-color: var(--highlight-colour);
+}
+.mainNav  div {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--header-colour);
+    z-index: 1;
+
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    font-size: 1.2rem;
+}
+.dropdown-content li {
+    width: 100%;
+    text-align: center;
+}
+.dropdown-content .headerHighlight {
+    display: inline-block;
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+    margin-top: 1.1rem;
+}
+
+.mainNav a {
+    text-decoration: none;
+    color: var(--primary-text-colour);
+}
+.mainNav button {
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: .4rem;
+
+    transition: opacity .5s;
+    opacity: 100%;
+
+    font-size: 1.3rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    color: var(--primary-text-colour);
+}
+.mainNav button:hover {
+    transition: opacity .5s;
+    opacity: 60%;
+}
+#themeButtonText {
+    position: relative;
+    bottom: .05rem;
+    padding: .3rem;
+    font-size: small;
+    font-weight: bold;
+}

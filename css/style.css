@@ -1,0 +1,63 @@
+body {
+    padding: 0;
+    margin: 0;
+    margin-bottom: -5rem;
+
+    background-color: var(--background-primary-colour);
+    color: var(--primary-text-colour);
+
+    font-family: Montserrat;
+    font-size: 1rem;
+}
+main {
+    
+}
+
+/*-------------------------   FOOTER   -------------------------*/
+footer {
+    border: 0;
+    border-top: .3rem;
+    border-style: solid;
+    border-color: hsl(0, 0%, 5%, 0.8);
+
+    margin: 0;
+    padding: 0;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    background-color: hsl(0, 0%, 10%, 0.8);
+
+    color: white;
+}
+footer div {
+    display: flex;
+}
+/*-------------------   COPYRIGHT   -------------------*/
+footer p {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+}
+/*-------------------   LINKS LIST   -------------------*/
+footer ul {
+    padding: 0;
+    padding-left: 15%;
+    padding-bottom: 3rem;
+    margin: 0;
+    
+    display: inline-block;
+    
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+footer ul a {
+    text-decoration: none;
+    
+    transition: color .5s;
+    color: white;
+}
+footer ul a:hover {
+    transition: color .5s;
+    color: rgba(255, 255, 255, 0.7);
+}
