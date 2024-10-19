@@ -1,0 +1,19 @@
+.windowContent {
+    display: none;
+
+    height: 30rem;
+    width: 30rem;
+
+    position: fixed;
+    bottom: 30%;
+    left: 30%;
+
+    background-color: var(--main-colour);
+    border: 2px;
+    border-color: var(--outset);
+    border-style: solid;
+}
+
+input.taskbarButton:checked + label + .windowContent {
+    display: flex;
+}

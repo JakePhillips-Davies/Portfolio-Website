@@ -1,0 +1,112 @@
+footer {
+    width: 100%;
+    height: fit-content;
+
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+.taskbar {
+    width: auto;
+    height: 2rem;
+    
+    background-color: var(--main-colour);
+
+    border: 2px;
+    border-color: var(--outset);
+    border-style: solid;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+input.taskbarButton {
+    display: none;
+}
+
+label.taskbarButton {
+    margin: 0.1rem;
+    margin-right: 0.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+
+    height: 1.6rem;
+
+    position: relative;
+
+    border: 2px;
+    border-color: var(--outset);
+    border-style: solid;
+    
+    background-color: var(--main-colour);
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+
+input.taskbarButton:checked + label.taskbarButton {
+    border-color: var(--inset);
+    
+    background-image: conic-gradient(
+        white 90deg,
+        var(--main-colour) 90deg 180deg,
+        white 180deg 270deg,
+        var(--main-colour) 270deg
+    );
+    background-repeat: repeat;
+    background-size: 4px 4px;
+    background-position: top left;
+}
+
+label.taskbarButton span {
+    background-color: rgba(0, 0, 0, 0);
+    
+    text-decoration: none;
+
+    border: none;
+}
+
+#startButton + label.taskbarButton span {
+    font-weight: bold;
+}
+
+label.taskbarButton img {
+    width: 1.4rem;
+    padding-right: 0.1rem;
+    padding-left: 0.1rem;
+}
+
+.taskbarTabs {
+    margin: 0;
+    flex: 1;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.taskbarTabs input.taskbarButton + label.taskbarButton {
+    width: 8rem;
+    overflow: hidden;
+}
+
+.time {
+    margin: 0.1rem;
+    margin-right: 0.2rem;
+    width: 6rem;
+
+    border: 2px;
+    border-color: var(--inset);
+    border-style: solid;
+    
+    background-color: var(--main-colour);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

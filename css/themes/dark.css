@@ -1,9 +1,0 @@
-:root{
-    --header-colour: hsl(0, 0%, 10%);
-    --background-primary-colour: hsl(0, 0%, 15%);
-    --background-secondary-colour: hsl(0, 0%, 20%);
-    --highlight-colour: hsl(359, 40%, 30%);
-    --primary-text-colour: hsl(0, 0%, 95%);
-    --secondary-text-colour: hsl(0, 0%, 80%);
-    --shadow-colour: rgba(0, 0, 0, 0.7);
-}

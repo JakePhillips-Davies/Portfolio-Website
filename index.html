@@ -5,19 +5,21 @@
 
         <!--                     CSS                     -->
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/mainNav.css">
+        <link rel="stylesheet" href="css/desktop.css">
+        <link rel="stylesheet" href="css/icon.css">
+        <link rel="stylesheet" href="css/taskbar.css">
+        <link rel="stylesheet" href="css/windows.css">
 
-        <!-- Theme selection -->
-        <link rel="stylesheet" id="themeSheet" href="css/themes/dark.css">
+        <!--                     Variables                     -->
+        <link rel="stylesheet" href="css/var/var.css">
 
         <!--                     JS                      -->
-        <script defer rel="text/javascript" src="js/themeSelect.js"></script>
+        <script defer rel="text/javascript" src="js/clock.js"></script>
 
         <!--                     Fonts                     -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <script src="https://kit.fontawesome.com/d761a5131f.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!--                     META                     -->
         <meta name="description" content="Portfolio website for Jake Phillips-Davies">
@@ -26,30 +28,55 @@
         <meta name="keywords" content="Art, code, game design, portfolio">
     </head>
     <body>
-        <header>
-            <nav class="mainNav">
-                <a href="index.html" class="homepageLink"> Home </a>
-                <a href="art.html" class="headerHighlight"> Art </a>
-                <a href="game-dev.html" class="headerHighlight"> Game Dev </a>
-                <a href="contact.html" class="headerHighlight"> Contact </a>
-                <button id="themeSelectButton"><i class="fa-solid fa-lightbulb"></i><span id="themeButtonText">Dark mode</span></button>
-            </nav>
-        </header>
         <main>
-            
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
+            <span class="temp"></span>
         </main>
         <footer>
-            <div>
-                <ul>
-                    <li><a href="index.html"> Home </a></li>
-                    <li><a href="art.html"> Art </a></li>
-                    <li><a href="game-dev.html"> Game Dev </a></li>
-                    <li><a href="contact.html"> Contact </a></li>
-                </ul>
+            <div class="taskbar">
+                <input type="checkbox" id="startButton" class="taskbarButton">
+                    <label for="startButton" class="taskbarButton">
+                        <img src="icons/windows-0.png" alt="">
+                        <span>Start</span>
+                    </label>
+                    <div class="windowContent">
+
+                    </div>
+                    
+                <div class="taskbarTabs">
+                    <!-------------------------------------------------------------->
+                    <input type="checkbox" id="fileExplorer" class="taskbarButton">
+                        <label for="fileExplorer" class="taskbarButton">
+                            <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                            <span>Files</span>
+                        </label>
+                        <div class="windowContent">
+
+                        </div>
+                    <!-------------------------------------------------------------->
+                </div>
+                <div class="time">
+                    <span id="clock"></span>
+                </div>
             </div>
-            <p>
-                © 2024 Jake Phillips-Davies
-            </p>
         </footer>
     </body>
 </html>
