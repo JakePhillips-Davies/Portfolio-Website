@@ -15,6 +15,8 @@
 
         <!--                     JS                      -->
         <script defer rel="text/javascript" src="js/clock.js"></script>
+        <script defer rel="text/javascript" src="js/startMenu.js"></script>
+        <script defer rel="text/javascript" src="js/windows.js"></script>
 
         <!--                     Fonts                     -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,28 +51,88 @@
             <span class="temp"></span>
             <span class="temp"></span>
             <span class="temp"></span>
+            <!--
+            https://www.instagram.com/jakephillipsdavies/
+            https://www.linkedin.com/in/jake-phillips-davies-827426251/
+            jakephillipsdavies@gmail.com
+            https://github.com/JakePhillips-Davies
+            Uni write up
+            Game projects write up
+            Skyrim modding write up
+            Art write up
+            Folder full of art
+            -->
         </main>
         <footer>
             <div class="taskbar">
+                <!-------------------------------------------------------------->
                 <input type="checkbox" id="startButton" class="taskbarButton">
-                    <label for="startButton" class="taskbarButton">
-                        <img src="icons/windows-0.png" alt="">
-                        <span>Start</span>
-                    </label>
-                    <div class="windowContent">
-
-                    </div>
-                    
-                <div class="taskbarTabs">
+                <div class="windowContent" id="startMenu">
+                    <span>
+                        <span>Windows95</span>
+                    </span>
+                    <ul>
+                        <li>Hiiiiiiiii</li>
+                        <li>Hiiiiiiiii</li>
+                        <li>Hiiiiiiiii</li>
+                    </ul>
+                </div>
+                <label for="startButton" class="taskbarButton">
+                    <img src="icons/windows-0.png" alt="">
+                    <span>Start</span>
+                </label>
+                <!-------------------------------------------------------------->
+                <div class="taskbarTabs" id="taskbarTabs">
                     <!-------------------------------------------------------------->
                     <input type="checkbox" id="fileExplorer" class="taskbarButton">
-                        <label for="fileExplorer" class="taskbarButton">
+                    <div class="windowContent" id="window">
+                        
+                            <div class="resizer" id="tl"></div>
+                            <div class="resizer" id="t"></div>
+                            <div class="resizer" id="tr"></div>
+                            <div class="resizer" id="r"></div>
+                            <div class="resizer" id="br"></div>
+                            <div class="resizer" id="b"></div>
+                            <div class="resizer" id="bl"></div>
+                            <div class="resizer" id="l"></div>
+                    
+                        <div class="handle">
                             <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
                             <span>Files</span>
-                        </label>
-                        <div class="windowContent">
-
+                            <div></div>
+                            <button type="button" id="min"><span></span></button>
+                            <button id="close">X</button>
                         </div>
+                    </div>
+                    <label for="fileExplorer" class="taskbarButton">
+                        <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                        <span>Files</span>
+                    </label>
+                    <!-------------------------------------------------------------->
+                    <input type="checkbox" id="images" class="taskbarButton">
+                    <div class="windowContent" id="window">
+                        
+                            <div class="resizer" id="tl"></div>
+                            <div class="resizer" id="t"></div>
+                            <div class="resizer" id="tr"></div>
+                            <div class="resizer" id="r"></div>
+                            <div class="resizer" id="br"></div>
+                            <div class="resizer" id="b"></div>
+                            <div class="resizer" id="bl"></div>
+                            <div class="resizer" id="l"></div>
+                        
+                        <div class="handle">
+                            <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                            <span>Images</span>
+                            <div></div>
+                            <button type="button" id="min"><span></span></button>
+                            <button id="close">X</button>
+                        </div>
+                    </div>
+                    <label for="images" class="taskbarButton">
+                        <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                        <span>Images</span>
+                    </label>
                     <!-------------------------------------------------------------->
                 </div>
                 <div class="time">

@@ -1,19 +1,206 @@
 .windowContent {
+    z-index: 10;
     display: none;
 
     height: 30rem;
-    width: 30rem;
+    width: 40rem;
 
     position: fixed;
-    bottom: 30%;
-    left: 30%;
 
     background-color: var(--main-colour);
-    border: 2px;
+    border: var(--bevel-size);
     border-color: var(--outset);
     border-style: solid;
+
+    flex-direction: column;
 }
 
-input.taskbarButton:checked + label + .windowContent {
+input.taskbarButton:checked + .windowContent {
     display: flex;
+}
+
+/*-------------------------------------------------------------------*/
+
+.handle {
+    margin: 0.25rem;
+    height: 2rem;
+
+    background-color: var(--secondary-colour);
+
+    cursor: move;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+.handle span {
+    font-size: 1.3rem;
+    color: rgb(198, 198, 198);
+}
+.handle img {
+    width: 1.6rem;
+    padding-right: 0.2rem;
+    padding-left: 0.3rem;
+}
+.selectedWindow .handle {
+    background-color: rgb(0, 0, 128);
+}
+.selectedWindow .handle span {
+    color: white;
+}
+
+.handle div {
+    flex: 1;
+}
+
+.handle button {
+    padding: 0;
+    margin-right: 0.3rem;
+    width: 1.6rem;
+    height: 1.6rem;
+
+    background-color: var(--main-colour);
+    border: var(--bevel-size);
+    border-color: var(--outset);
+    border-style: solid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 1000;
+}
+.handle button:active {
+    border-color: var(--inset);
+}
+#min span{
+    position: relative;
+    width: 70%;
+    height: 18%;
+    margin-top: 40%;
+    background-color: black;
+}
+
+/*-------------------------------------------------------------------*/
+
+.taskbarTabs .windowContent {
+    top: 20%;
+    left: 20%;
+}
+
+/*-------------------------------------------------------------------*/
+
+.resizer {
+    background-color: rgba(255, 0, 0, 0);
+ }
+#tl {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    height: 1rem;
+    width: 1rem;
+
+    cursor: nw-resize;
+}
+#t {
+    position: absolute;
+    top: -0.5rem;
+    left: 0.5rem;
+    height: 1rem;
+    width: calc(100% - 1rem);
+
+    cursor: n-resize;
+}
+#tr {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    height: 1rem;
+    width: 1rem;
+
+    cursor: ne-resize;
+}
+#r {
+    position: absolute;
+    top: 0.5rem;
+    right: -0.5rem;
+    height: calc(100% - 1rem);
+    width: 1rem;
+
+    cursor: e-resize;
+}
+#br {
+    position: absolute;
+    bottom: -0.5rem;
+    right: -0.5rem;
+    height: 1rem;
+    width: 1rem;
+
+    cursor: se-resize;
+}
+#b {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0.5rem;
+    height: 1rem;
+    width: calc(100% - 1rem);
+
+    cursor: s-resize;
+}
+#bl {
+    position: absolute;
+    bottom: -0.5rem;
+    left: -0.5rem;
+    height: 1rem;
+    width: 1rem;
+
+    cursor: sw-resize;
+}
+#l {
+    position: absolute;
+    top: 0.5rem;
+    left: -0.5rem;
+    height: calc(100% - 1rem);
+    width: 1rem;
+
+    cursor: w-resize;
+}
+
+/*-------------------------------------------------------------------*/
+
+#startMenu + div + label.taskbarButton {
+    font-weight: bold;
+}
+
+#startMenu {
+    bottom: calc(var(--bevel-size)*2 + 2.3rem);
+    left: calc(var(--bevel-size) + 0.2rem);
+
+    width: 18rem;
+    height: 25rem;
+
+    flex-direction: row;
+}
+
+#startMenu span {
+    width: 3rem;
+    background-color: var(--secondary-colour);
+
+    position: relative;
+}
+
+#startMenu span span {
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0.4rem;
+    width: 2.5rem;
+
+    writing-mode:vertical-rl;
+    text-orientation: sideways;
+    rotate: 180deg;
+
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(198, 198, 198);
 }

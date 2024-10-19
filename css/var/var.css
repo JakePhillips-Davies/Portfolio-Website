@@ -1,8 +1,11 @@
 :root {
     --scaling-value: 2;
 
-    --outset: #FFFFFF #808080 #808080 #FFFFFF;
-    --inset: #808080 #FFFFFF #FFFFFF #808080;
+    --outset: #FFFFFF #1d1d1d #1d1d1d #FFFFFF;
+    --inset: #818181 #FFFFFF #FFFFFF #818181;
     
     --main-colour: rgb(195, 195, 195);
+    --secondary-colour: rgb(128, 128, 128);
+
+    --bevel-size: 0.25rem;
 }
