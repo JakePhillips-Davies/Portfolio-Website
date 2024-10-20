@@ -21,8 +21,13 @@ span.temp {
     filter: opacity(0.5) drop-shadow(0 0 1px blue);
 }
 .shortcut span {
+    max-width: 4rem;
+    max-height: 2.5rem;
+
     font-size: 1rem;
 
     position: absolute;
-    bottom: -1rem;
+    top: 4.5rem;
+
+    overflow: hidden;
 }
