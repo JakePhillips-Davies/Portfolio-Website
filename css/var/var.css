@@ -2,10 +2,10 @@
     --scaling-value: 2;
 
     --outset: #FFFFFF #1d1d1d #1d1d1d #FFFFFF;
-    --inset: #818181 #FFFFFF #FFFFFF #818181;
+    --inset: #1d1d1d #FFFFFF #FFFFFF #1d1d1d;
     
     --main-colour: rgb(195, 195, 195);
     --secondary-colour: rgb(128, 128, 128);
 
-    --bevel-size: 0.25rem;
+    --bevel-size: 0.2rem;
 }

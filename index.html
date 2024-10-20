@@ -3,7 +3,7 @@
     <head>
         <title>Jake Phillips-Davies</title>
 
-        <base href="/Portfolio-Website/">
+        <!-- <base href="/Portfolio-Website/"> -->
 
         <!--                     CSS                     -->
         <link rel="stylesheet" href="css/style.css">
@@ -136,10 +136,16 @@
                             <button id="max"></button>
                             <button id="close">X</button>
                         </div>
+                        <nav class="pdfNav">
+                            <input class="searchButtonInpt" type="checkbox" id="pdfSearchButton">
+                            <div class="searchDropdown">
+                                <ul></ul>
+                            </div>
+                            <label class="searchButton" for="pdfSearchButton"><span>--.pdf</span><div><p>▼</p></div></label>
+                        </nav>
                         <div class="pdfCont">
                             <canvas id="pdfRender"></canvas>
                         </div>
-                        
                     </div>
                     <label for="pdfReader" class="taskbarButton">
                         <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">

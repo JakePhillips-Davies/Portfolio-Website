@@ -10,6 +10,11 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.w
 
 loadPdf();
 
+function changeURL(url_) {
+    url = url_;
+    loadPdf();
+}
+
 function loadPdf() {
     // Asynchronous download of PDF
     var loadingTask = pdfjsLib.getDocument(url);
@@ -44,4 +49,19 @@ function loadPdf() {
     // PDF loading error
     console.error(reason);
     }); 
+}
+
+
+
+fetch(`../assets/json/pdfs.json`).then(function (result) {
+    result.json().then(function (json) {
+        setupSearch(json);
+    })
+})
+function setupSearch(json) {
+    json.forEach(pdf => {
+        
+
+        
+    });
 }

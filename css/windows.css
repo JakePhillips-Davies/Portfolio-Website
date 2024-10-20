@@ -23,6 +23,7 @@ input.taskbarButton:checked + .windowContent {
 
 .handle {
     margin: 0.25rem;
+    margin-bottom: 0;
     height: 2rem;
 
     background-color: var(--secondary-colour);

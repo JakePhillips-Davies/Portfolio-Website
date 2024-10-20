@@ -17,3 +17,89 @@
     align-self: start;
     margin: auto;
 }
+
+
+.pdfNav {
+    margin: 0.25rem;
+    margin-bottom: 0;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+
+.searchButton {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    margin: 0.2rem;
+    margin-right: 0.3rem;
+    margin-left: 0;
+    padding-left: 0.2rem;
+    padding-right: 0;
+
+    height: fit-content;
+    width: 12rem;
+
+    position: relative;
+
+    border: var(--bevel-size);
+    border-color: var(--inset);
+    border-style: solid;
+    
+    background-color: white;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 1rem;
+}
+
+.searchButton div {
+    margin-left: auto;
+    margin-right: 0;
+
+    height: calc(1.6rem - 4*var(--bevel-size));
+    width: calc(1.6rem - 4*var(--bevel-size));
+
+    background-color: var(--main-colour);
+    border: var(--bevel-size);
+    border-color: var(--outset);
+    border-style: solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.searchButton div p {
+    font-size: 0.7rem;
+}
+
+.searchDropdown {
+    display: none;
+
+    width: calc(12rem + 2*var(--bevel-size));
+    min-height: 6rem;
+    height: fit-content;
+
+    background-color: white;
+
+    border: calc(var(--bevel-size)/2);
+    border-style: solid;
+    border-color: black;
+
+    position: absolute;
+    left: 0;
+    top: calc(100% - 0.2rem);
+}
+.searchButtonInpt:checked + .searchDropdown {
+    display: block;
+}
