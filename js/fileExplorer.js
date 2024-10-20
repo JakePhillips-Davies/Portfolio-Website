@@ -120,3 +120,6 @@ class zoomBar {
     }
 
 }
+
+
+document.getElementById('welcome').checked = true;

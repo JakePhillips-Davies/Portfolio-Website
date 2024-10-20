@@ -82,6 +82,25 @@ input.taskbarButton:checked + .windowContent {
     margin-top: 40%;
     background-color: black;
 }
+#max span {
+    position: relative;
+    width: 70%;
+    height: 70%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: black;
+}
+#max span div {
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    margin-top: 10%;
+    
+    background-color: var(--main-colour);
+}
 
 /*-------------------------------------------------------------------*/
 

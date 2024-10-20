@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="css/pdfReader.css">
         <link rel="stylesheet" href="css/fileExplorer.css">
         <link rel="stylesheet" href="css/imageViewer.css">
+        <link rel="stylesheet" href="css/welcome.css">
 
         <!--                     Variables                     -->
         <link rel="stylesheet" href="css/var/var.css">
@@ -79,6 +80,10 @@
                                 <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
                                 <p><u>C</u>at pictures</p>
                             </button>
+                            <button target="welcome">
+                                <img src="icons/file_lines-0.png" alt="">
+                                <p><u>W</u>elcome</p>
+                            </button>
                         </ul>
                         <div class="divider"></div>
                         <button id="shutDown">
@@ -93,6 +98,53 @@
                 </label>
                 <!-------------------------------------------------------------->
                 <div class="taskbarTabs" id="taskbarTabs">
+                    <!-------------------------------------------------------------->
+                    <!--Welcome-->
+                    <input type="checkbox" id="welcome" class="taskbarButton">
+                    <div class="windowContent selectedWindow" id="window" posT="5rem" posL="5rem">
+                        
+                            <div class="resizer" id="tl"></div>
+                            <div class="resizer" id="t"></div>
+                            <div class="resizer" id="tr"></div>
+                            <div class="resizer" id="r"></div>
+                            <div class="resizer" id="br"></div>
+                            <div class="resizer" id="b"></div>
+                            <div class="resizer" id="bl"></div>
+                            <div class="resizer" id="l"></div>
+                    
+                        <div class="handle">
+                            <img src="icons/file_lines-0.png" alt="">
+                            <span>Welcome</span>
+                            <div></div>
+                            <button type="button" id="min"><span></span></button>
+                            <button id="max"><span><div></div></span></button>
+                            <button id="close">X</button>
+                        </div>
+                        <div id="welcomeText">
+                            <h1>Welcome!</h1>
+                            <p>
+                                Hi, I'm <b>Jake Phillips-Davies</b>. I am currently a computer science student
+                                studying games development, I am a self-taught artist, and this is my website.
+                            </p>
+                            <p>
+                                Thank you for visiting! It is interactive and functions much like you'd expect from
+                                a desktop, so feel free to have a look around. It doesn't work well on mobile yet
+                                however, sadly.
+                            </p>
+                            <p>
+                                I typically enjoy using game-dev and digital drawing as my creative outlet. Today however,
+                                I am using web-dev as a creative outlet to hopefully bring you a more enjoyable visit to
+                                my portfolio.
+                            </p>
+                            <p>
+                                This website was made as a hobby project using HTML, CSS and JS, so please mind the rough edges. 
+                            </p>
+                        </div>
+                    </div>
+                    <label for="welcome" class="taskbarButton">
+                        <img src="icons/file_lines-0.png" alt="">
+                        <span>Welcome</span>
+                    </label>
                     <!-------------------------------------------------------------->
                     <!--Art folder-->
                     <input type="checkbox" id="artExplorer" class="taskbarButton">
@@ -112,7 +164,7 @@
                             <span>Art</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
-                            <button id="max"></button>
+                            <button id="max"><span><div></div></span></button>
                             <button id="close">X</button>
                         </div>
                         <div class="fileExplorer" src="assets/json/art.json" lib="assets/art/">
@@ -124,9 +176,9 @@
                         <span>Art</span>
                     </label>
                     <!-------------------------------------------------------------->
-                    <!--Art folder-->
+                    <!--cat folder-->
                     <input type="checkbox" id="catExplorer" class="taskbarButton">
-                    <div class="windowContent" id="window" posT="4rem" posL="4rem">
+                    <div class="windowContent" id="window" posT="10rem" posL="10rem">
                         
                             <div class="resizer" id="tl"></div>
                             <div class="resizer" id="t"></div>
@@ -142,7 +194,7 @@
                             <span>Cat</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
-                            <button id="max"></button>
+                            <button id="max"><span><div></div></span></button>
                             <button id="close">X</button>
                         </div>
                         <div class="fileExplorer" src="assets/json/cat.json" lib="assets/cat/">
@@ -172,7 +224,7 @@
                             <span class="pdfNameNeeded">--.pdf</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
-                            <button id="max"></button>
+                            <button id="max"><span><div></div></span></button>
                             <button id="close">X</button>
                         </div>
                         <nav class="pdfNav">
@@ -209,7 +261,7 @@
                             <span class="imgNameNeeded">Images</span>
                             <div></div>
                             <button id="min"><span></span></button>
-                            <button id="max"></button>
+                            <button id="max"><span><div></div></span></button>
                             <button id="close">X</button>
                         </div>
                         <nav class="imgNav">
