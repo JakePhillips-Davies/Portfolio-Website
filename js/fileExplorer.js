@@ -25,16 +25,14 @@ explorers.forEach(explorer => {
                 case 'png':
                     shortcut.addEventListener('dblclick', () => {
                         updateImage(explorer.getAttribute('lib'), shortcut_.url);
-                        imageTab.checked = true;
-                        bringTabForward(imageTab.nextElementSibling);
+                        openWindow(imageTab);
                     });
                     break;
         
                 case 'pdf':
                     shortcut.addEventListener('dblclick', () => {
                         updatePdf(explorer.getAttribute('lib'), shortcut_.url);
-                        pdfTab.checked = true;
-                        bringTabForward(pdfTab.nextElementSibling);
+                        openWindow(pdfTab);
                     });
                     break;
         

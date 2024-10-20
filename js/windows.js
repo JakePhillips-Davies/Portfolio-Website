@@ -30,6 +30,13 @@ function bringTabForward(window_) {
 windows.forEach(window => {
     const handle = window.querySelector(".handle");
 
+    if (window.getAttribute('posT') != '') {
+        window.style.top = window.getAttribute('posT');
+    }
+    if (window.getAttribute('posL') != '') {
+        window.style.left = window.getAttribute('posL');
+    }
+
     //Bring forward
     window.addEventListener('mousedown', () => {
         z++;
@@ -335,4 +342,10 @@ closes.forEach(close => {
         close.parentElement.parentElement.nextElementSibling.classList.add("deactive");
     })
 });
+
+function openWindow(target) {
+    target.checked = true;
+    bringTabForward(target.nextElementSibling);
+    target.nextElementSibling.nextElementSibling.classList.remove('deactive');
+}
 
