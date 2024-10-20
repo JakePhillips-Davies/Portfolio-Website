@@ -8,11 +8,13 @@
         <!--                     CSS                     -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/desktop.css">
-        <link rel="stylesheet" href="css/icon.css">
+        <link rel="stylesheet" href="css/shortcut.css">
         <link rel="stylesheet" href="css/taskbar.css">
         <link rel="stylesheet" href="css/windows.css">
         <link rel="stylesheet" href="css/startMenu.css">
         <link rel="stylesheet" href="css/pdfReader.css">
+        <link rel="stylesheet" href="css/fileExplorer.css">
+        <link rel="stylesheet" href="css/imageViewer.css">
 
         <!--                     Variables                     -->
         <link rel="stylesheet" href="css/var/var.css">
@@ -23,6 +25,8 @@
         <script defer rel="text/javascript" src="js/startMenu.js"></script>
         <script defer rel="text/javascript" src="js/windows.js"></script>
         <script defer rel="text/javascript" src="js/pdfReader.js"></script>
+        <script defer rel="text/javascript" src="js/fileExplorer.js"></script>
+        <script defer rel="text/javascript" src="js/imageViewer.js"></script>
 
         <!--                     Fonts                     -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,26 +41,9 @@
     </head>
     <body>
         <main>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
-            <span class="temp"></span>
+            <div id="desktopFolder" class="fileExplorer" src="assets/json/desktop.json" lib="assets/desktop/">
+
+            </div>
             <!--
             https://www.instagram.com/jakephillipsdavies/
             https://www.linkedin.com/in/jake-phillips-davies-827426251/
@@ -67,6 +54,10 @@
             Skyrim modding write up
             Art write up
             Folder full of art
+
+            link
+            image
+            pdf
             -->
         </main>
         <footer>
@@ -90,7 +81,8 @@
                 <!-------------------------------------------------------------->
                 <div class="taskbarTabs" id="taskbarTabs">
                     <!-------------------------------------------------------------->
-                    <input type="checkbox" id="fileExplorer" class="taskbarButton">
+                    <!--Art folder-->
+                    <input type="checkbox" id="artExplorer" class="taskbarButton">
                     <div class="windowContent" id="window">
                         
                             <div class="resizer" id="tl"></div>
@@ -104,18 +96,22 @@
                     
                         <div class="handle">
                             <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
-                            <span>Files</span>
+                            <span>Art</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
                             <button id="max"></button>
                             <button id="close">X</button>
                         </div>
+                        <div class="fileExplorer" src="assets/json/art.json" lib="assets/art/">
+                            
+                        </div>
                     </div>
-                    <label for="fileExplorer" class="taskbarButton">
+                    <label for="artExplorer" class="taskbarButton">
                         <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
-                        <span>Files</span>
+                        <span>Art</span>
                     </label>
                     <!-------------------------------------------------------------->
+                    <!--PDF reader-->
                     <input type="checkbox" id="pdfReader" class="taskbarButton">
                     <div class="windowContent" id="window">
                         
@@ -129,8 +125,8 @@
                             <div class="resizer" id="l"></div>
                         
                         <div class="handle">
-                            <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
-                            <span>--.pdf</span>
+                            <img src="icons/directory_open_file_mydocs-0.png" alt="">
+                            <span class="pdfNameNeeded">--.pdf</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
                             <button id="max"></button>
@@ -139,17 +135,54 @@
                         <nav class="pdfNav">
                             <input class="searchButtonInpt" type="checkbox" id="pdfSearchButton">
                             <div class="searchDropdown">
-                                <ul></ul>
+                                <ul id="pdfSearch"></ul>
                             </div>
-                            <label class="searchButton" for="pdfSearchButton"><span>--.pdf</span><div><p>▼</p></div></label>
+                            <label class="searchButton" for="pdfSearchButton"><span class="pdfNameNeeded">--.pdf</span><div><p>▼</p></div></label>
                         </nav>
                         <div class="pdfCont">
                             <canvas id="pdfRender"></canvas>
                         </div>
                     </div>
                     <label for="pdfReader" class="taskbarButton">
+                        <img src="icons/directory_open_file_mydocs-0.png" alt="">
+                        <span class="pdfNameNeeded">--.pdf</span>
+                    </label>
+                    <!-------------------------------------------------------------->
+                    <!--Image viewer-->
+                    <input type="checkbox" id="imageViewer" class="taskbarButton">
+                    <div class="windowContent" id="window">
+                        
+                            <div class="resizer" id="tl"></div>
+                            <div class="resizer" id="t"></div>
+                            <div class="resizer" id="tr"></div>
+                            <div class="resizer" id="r"></div>
+                            <div class="resizer" id="br"></div>
+                            <div class="resizer" id="b"></div>
+                            <div class="resizer" id="bl"></div>
+                            <div class="resizer" id="l"></div>
+                    
+                        <div class="handle">
+                            <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                            <span class="imgNameNeeded">Images</span>
+                            <div></div>
+                            <button id="min"><span></span></button>
+                            <button id="max"></button>
+                            <button id="close">X</button>
+                        </div>
+                        <nav class="imgNav">
+                            <div id="imgZoom">
+                                <button class="zoomOut">-</button>
+                                <span>1x</span>
+                                <button class="zoomIn">+</button>
+                            </div>
+                        </nav>
+                        <div id="imageCont">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <label for="imageViewer" class="taskbarButton">
                         <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
-                        <span>--.pdf</span>
+                        <span class="imgNameNeeded">Images</span>
                     </label>
                     <!-------------------------------------------------------------->
                 </div>

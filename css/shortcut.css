@@ -1,0 +1,28 @@
+span.temp {
+    background-color: black;
+    border-style: solid;
+    border: -1rem;
+    border-color: white;
+}
+
+.shortcut {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shortcut img {
+    max-width: 4rem;
+    max-height: 4rem;
+}
+.shortcut.selected img {
+    filter: opacity(0.5) drop-shadow(0 0 1px blue);
+}
+.shortcut span {
+    font-size: 1rem;
+
+    position: absolute;
+    bottom: -1rem;
+}

@@ -1,5 +1,10 @@
 [
     {
-        "url": "Biography.pdf"
+        "url": "Biography.pdf",
+        "loc": "assets/pdf/"
+    },
+    {
+        "url": "Anatomy-Studies.pdf",
+        "loc": "assets/art/"
     }
 ]

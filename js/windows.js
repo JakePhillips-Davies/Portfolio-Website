@@ -10,21 +10,22 @@ taskbarTabs.forEach(tab => {
     
     if(tab.tagName == "INPUT")
         tab.addEventListener('click', (e) => {
-            console.log(window.getComputedStyle(tab.nextElementSibling, null).display);
-            
             if(window.getComputedStyle(tab.nextElementSibling, null).display == 'none')
                 e.preventDefault();
-
-            windows.forEach(window => {
-                if(window.classList.contains("selectedWindow"))
-                    window.classList.remove("selectedWindow");
-            });
-            tab.nextElementSibling.classList.add("selectedWindow");
-            z++;
-            tab.nextElementSibling.style.zIndex = z;
+            bringTabForward(tab.nextElementSibling);
         });
 
 });
+
+function bringTabForward(window_) {
+    windows.forEach(window => {
+        if(window.classList.contains("selectedWindow"))
+            window.classList.remove("selectedWindow");
+    });
+    window_.classList.add("selectedWindow");
+    z++;
+    window_.style.zIndex = z;
+}
 
 windows.forEach(window => {
     const handle = window.querySelector(".handle");

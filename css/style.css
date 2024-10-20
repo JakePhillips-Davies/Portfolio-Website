@@ -17,3 +17,35 @@ body {
 input {
     display: none;
 }
+
+button {
+    padding: 0;
+    margin: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+
+    background-color: var(--main-colour);
+    border: var(--bevel-size);
+    border-color: var(--outset);
+    border-style: solid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 900;
+}
+button:active {
+    border-color: var(--inset);
+}
+
+nav {
+    margin: 0.25rem;
+    margin-bottom: 0;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}

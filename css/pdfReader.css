@@ -103,3 +103,21 @@
 .searchButtonInpt:checked + .searchDropdown {
     display: block;
 }
+.searchDropdown ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    font-size: 1rem;
+}
+.searchDropdown ul li {
+    padding: 0.3rem;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+.searchDropdown ul li img {
+    width: 1.6rem;
+}

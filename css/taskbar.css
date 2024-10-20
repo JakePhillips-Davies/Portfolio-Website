@@ -98,7 +98,7 @@ label.taskbarButton img {
 }
 
 .taskbarTabs input.taskbarButton + div + label.taskbarButton {
-    width: 12rem;
+    min-width: 12rem;
     overflow: hidden;
 }
 

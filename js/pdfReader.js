@@ -1,6 +1,7 @@
-// If absolute URL from the remote server is provided, configure the CORS
-// header on that server.
-var url = '../assets/pdf/Biography.pdf';
+const searchDropdown = document.getElementById('pdfSearch');
+const pdfNamesNeeded = document.querySelectorAll('.pdfNameNeeded');
+
+var url = '';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 var { pdfjsLib } = globalThis;
@@ -10,9 +11,14 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.w
 
 loadPdf();
 
-function changeURL(url_) {
-    url = url_;
+function updatePdf(loc, url_) {
+    url = loc + url_;
+
     loadPdf();
+
+    pdfNamesNeeded.forEach(title => {
+        title.innerText = url_;
+    });
 }
 
 function loadPdf() {
@@ -59,9 +65,16 @@ fetch(`../assets/json/pdfs.json`).then(function (result) {
     })
 })
 function setupSearch(json) {
-    json.forEach(pdf => {
+    json.forEach(jsonPDF => {
         
+        var pdf = document.createElement('li')
+        pdf.innerHTML = '<img src="icons/file_lines-0.png" alt=""></img>' + jsonPDF.url;
 
+        pdf.addEventListener('click', () => {
+            updatePdf(jsonPDF.loc, jsonPDF.url);
+        });
+
+        searchDropdown.appendChild(pdf);
         
     });
 }
