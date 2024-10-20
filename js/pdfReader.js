@@ -1,6 +1,6 @@
 // If absolute URL from the remote server is provided, configure the CORS
 // header on that server.
-var url = '../assets/pdf/Biography.pdf';
+var url = 'assets/pdf/Biography.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 var { pdfjsLib } = globalThis;
