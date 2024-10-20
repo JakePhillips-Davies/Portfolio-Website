@@ -9,14 +9,18 @@
         <link rel="stylesheet" href="css/icon.css">
         <link rel="stylesheet" href="css/taskbar.css">
         <link rel="stylesheet" href="css/windows.css">
+        <link rel="stylesheet" href="css/startMenu.css">
+        <link rel="stylesheet" href="css/pdfReader.css">
 
         <!--                     Variables                     -->
         <link rel="stylesheet" href="css/var/var.css">
 
         <!--                     JS                      -->
+        <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
         <script defer rel="text/javascript" src="js/clock.js"></script>
         <script defer rel="text/javascript" src="js/startMenu.js"></script>
         <script defer rel="text/javascript" src="js/windows.js"></script>
+        <script defer rel="text/javascript" src="js/pdfReader.js"></script>
 
         <!--                     Fonts                     -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,6 +105,7 @@
                             <span>Files</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
+                            <button id="max"></button>
                             <button id="close">X</button>
                         </div>
                     </div>
@@ -109,7 +114,7 @@
                         <span>Files</span>
                     </label>
                     <!-------------------------------------------------------------->
-                    <input type="checkbox" id="images" class="taskbarButton">
+                    <input type="checkbox" id="pdfReader" class="taskbarButton">
                     <div class="windowContent" id="window">
                         
                             <div class="resizer" id="tl"></div>
@@ -123,15 +128,20 @@
                         
                         <div class="handle">
                             <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
-                            <span>Images</span>
+                            <span>--.pdf</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
+                            <button id="max"></button>
                             <button id="close">X</button>
                         </div>
+                        <div class="pdfCont">
+                            <canvas id="pdfRender"></canvas>
+                        </div>
+                        
                     </div>
-                    <label for="images" class="taskbarButton">
+                    <label for="pdfReader" class="taskbarButton">
                         <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
-                        <span>Images</span>
+                        <span>--.pdf</span>
                     </label>
                     <!-------------------------------------------------------------->
                 </div>

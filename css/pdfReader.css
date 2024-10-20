@@ -1,0 +1,19 @@
+.pdfCont {
+    flex: 1;
+    margin: 0.25rem;
+
+    border: var(--bevel-size);
+    border-color: var(--inset);
+    border-style: solid;
+
+    background-color: white;
+
+    overflow: scroll;
+
+    display: flex;
+}
+
+#pdfRender {
+    align-self: start;
+    margin: auto;
+}
