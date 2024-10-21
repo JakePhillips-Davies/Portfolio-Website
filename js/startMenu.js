@@ -13,6 +13,6 @@ document.addEventListener('click', function(e) {
 
 listButtons.forEach(button_ => {
     button_.addEventListener('click', () => {
-        openWindow(document.getElementById(button_.getAttribute("target")), '_blank');
+        openWindow(document.getElementById(button_.getAttribute("target")));
     });
 });

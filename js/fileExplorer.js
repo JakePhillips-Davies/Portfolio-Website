@@ -41,6 +41,12 @@ explorers.forEach(explorer => {
                         window.open(shortcut_.link, '_blank');
                     });
                     break;
+
+                case 'folder':
+                    shortcut.addEventListener('click', () => {
+                        openWindow(document.getElementById(shortcut_.other))
+                    });
+                    break;
             
                 default:
                     break;
@@ -63,11 +69,15 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
             break;
 
         case 'pdf':
-            icon.setAttribute('src', 'icons/file_lines-0.png')
+            icon.setAttribute('src', 'icons/file_lines-0.png');
             break;
 
         case 'link':
-            icon.setAttribute('src', loc + url)
+            icon.setAttribute('src', loc + url);
+            break;
+        
+        case 'folder':
+            icon.setAttribute('src', "icons/directory_open_file_mydocs-5.png");
             break;
     
         default:
