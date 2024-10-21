@@ -1,62 +1,62 @@
-const explorers = document.querySelectorAll('.fileExplorer');
+const explorer = document.getElementById('fileExplorer');
 const imageTab = document.getElementById('imageViewer');
 const pdfTab = document.getElementById('pdfReader');
 
-
-explorers.forEach(explorer => {
-    
-    //get their json from src
-    fetch(explorer.getAttribute(`src`)).then(function (result) {
+function fillExplorer(src) {
+    //fetch json
+    fetch(src).then(function (result) {
         result.json().then(function (json) {
-            fillExplorer(json);
+            actuallyFillExplorer(json);
         });
     });
 
-    //fill out the div with the items in json
-    function fillExplorer(json) {
+    explorer.innerText = '';
+}
+
+//fill out the div with the items in json
+function actuallyFillExplorer(json) {
+    
+    //for each item, create an shortcut
+    json.forEach(shortcut_ => {
+
+        var shortcut = document.createElement('div');
+        shortcut = generateShortcut(shortcut, shortcut_.url, shortcut_.type, explorer.getAttribute('lib'), shortcut_.other);
+
+        switch (shortcut_.type) {
+            case 'png':
+                shortcut.addEventListener('click', () => {
+                    updateImage(explorer.getAttribute('lib'), shortcut_.url);
+                    openWindow(imageTab);
+                });
+                break;
+    
+            case 'pdf':
+                shortcut.addEventListener('click', () => {
+                    updatePdf(explorer.getAttribute('lib'), shortcut_.url);
+                    openWindow(pdfTab);
+                });
+                break;
+    
+            case 'link':
+                shortcut.addEventListener('click', () => {
+                    window.open(shortcut_.link, '_blank');
+                });
+                break;
+
+            case 'folder':
+                shortcut.addEventListener('click', () => {
+                    fillExplorer(shortcut_.other);
+                });
+                break;
         
-        //for each item, create an shortcut
-        json.forEach(shortcut_ => {
+            default:
+                break;
+        }
 
-            var shortcut = document.createElement('div');
-            shortcut = generateShortcut(shortcut, shortcut_.url, shortcut_.type, explorer.getAttribute('lib'), shortcut_.other);
+        explorer.appendChild(shortcut);
 
-            switch (shortcut_.type) {
-                case 'png':
-                    shortcut.addEventListener('click', () => {
-                        updateImage(explorer.getAttribute('lib'), shortcut_.url);
-                        openWindow(imageTab);
-                    });
-                    break;
-        
-                case 'pdf':
-                    shortcut.addEventListener('click', () => {
-                        updatePdf(explorer.getAttribute('lib'), shortcut_.url);
-                        openWindow(pdfTab);
-                    });
-                    break;
-        
-                case 'link':
-                    shortcut.addEventListener('click', () => {
-                        window.open(shortcut_.link, '_blank');
-                    });
-                    break;
-
-                case 'folder':
-                    shortcut.addEventListener('click', () => {
-                        openWindow(document.getElementById(shortcut_.other))
-                    });
-                    break;
-            
-                default:
-                    break;
-            }
-
-            explorer.appendChild(shortcut);
-
-        });
-    };
-});
+    });
+};
 
 function generateShortcut(shortcut_, url, fileType, loc, other) {
     var shortcut = shortcut_;

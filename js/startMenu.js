@@ -13,6 +13,10 @@ document.addEventListener('click', function(e) {
 
 listButtons.forEach(button_ => {
     button_.addEventListener('click', () => {
-        openWindow(document.getElementById(button_.getAttribute("target")));
+        if (button_.getAttribute("opens") == "folder") {
+            openWindow(document.getElementById('fileExplorerWindow'));
+            fillExplorer(button_.getAttribute("target"));
+        }
+        else openWindow(document.getElementById(button_.getAttribute("target")));
     });
 });
