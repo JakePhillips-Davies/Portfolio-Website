@@ -6,11 +6,6 @@ function closeStartMenu() {
     startButton.checked = false;
 }
 
-document.addEventListener('click', function(e) {
-    if(!startMenu.contains(e.target) && !startButton.contains(e.target) && !(window.getComputedStyle(startMenu, null).display == 'none'))
-        closeStartMenu();
-});
-
 listButtons.forEach(button_ => {
     button_.addEventListener('click', () => {
         if (button_.getAttribute("opens") == "folder") {

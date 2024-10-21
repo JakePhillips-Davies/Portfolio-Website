@@ -1,10 +1,10 @@
 [
     {
         "url": "Resume.pdf",
-        "loc": "assets/pdf/"
+        "loc": "../assets/pdf/"
     },
     {
         "url": "Anatomy-Studies.pdf",
-        "loc": "assets/art/"
+        "loc": "../assets/art/"
     }
 ]

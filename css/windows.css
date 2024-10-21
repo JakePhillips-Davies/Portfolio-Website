@@ -19,6 +19,13 @@ input.taskbarButton:checked + .windowContent {
     display: flex;
 }
 
+.windowContent nav {
+    background-color: var(--main-colour);
+    border: calc(var(--bevel-size) / 2);
+    border-color: var(--outset);
+    border-style: solid;
+}
+
 /*-------------------------------------------------------------------*/
 
 .handle {

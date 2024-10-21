@@ -18,6 +18,9 @@ main {
 
     border: none;
     
+    display: grid;
     grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, 5rem);
     grid-template-rows: repeat(auto-fill, 5rem);
+    gap: 1.5rem 0;
 }

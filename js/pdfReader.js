@@ -14,6 +14,9 @@ loadPdf();
 function updatePdf(loc, url_) {
     url = loc + url_;
 
+    console.log(url);
+    
+
     loadPdf();
 
     pdfNamesNeeded.forEach(title => {

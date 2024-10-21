@@ -2,6 +2,6 @@
     {
         "url": "Cats",
         "type": "folder",
-        "other": "/assets/json/cat.json"
+        "other": "../assets/json/cat.json"
     }
 ]

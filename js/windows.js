@@ -5,6 +5,15 @@ const closes = document.querySelectorAll("#close");
 
 z = 100;
 
+document.addEventListener('mousedown', function(e) {
+    if(!startMenu.contains(e.target))
+        closeStartMenu();
+
+    windows.forEach(window => {
+        if(window.classList.contains("selectedWindow"))
+            window.classList.remove("selectedWindow");
+    });
+});
 
 taskbarTabs.forEach(tab => {
     
@@ -38,16 +47,9 @@ windows.forEach(window => {
     }
 
     //Bring forward
-    window.addEventListener('mousedown', () => {
-        z++;
-        window.style.zIndex = z;
-
-        windows.forEach(window => {
-            if(window.classList.contains("selectedWindow"))
-                window.classList.remove("selectedWindow");
-        });
-        window.classList.add("selectedWindow");
-    });
+    window.addEventListener('mousedown', () => { setTimeout(() => {
+        bringTabForward(window);
+    }, 1);});
 
     //move whole window
     handle.addEventListener('mousedown', (e) => {

@@ -1,31 +1,46 @@
 const explorer = document.getElementById('fileExplorer');
+const desktopFolder = document.getElementById('desktopFolder');
 const imageTab = document.getElementById('imageViewer');
 const pdfTab = document.getElementById('pdfReader');
+const fileNamespaces = document.querySelectorAll('.fileExpName')
+
+
+fetch('../assets/json/desktop.json').then(function (result) {
+    result.json().then(function (json) {
+        actuallyFillExplorer(json, desktopFolder);
+    });
+});
+
 
 function fillExplorer(src) {
     //fetch json
     fetch(src).then(function (result) {
         result.json().then(function (json) {
-            actuallyFillExplorer(json);
+            actuallyFillExplorer(json, explorer);
         });
+    });
+
+    fileNamespaces.forEach(namespace => {
+        var folderName = src.replace('../assets/json/', '').replace('.json', '');
+        namespace.innerHTML = folderName;
     });
 
     explorer.innerText = '';
 }
 
 //fill out the div with the items in json
-function actuallyFillExplorer(json) {
+function actuallyFillExplorer(json, appendLoc) {
     
     //for each item, create an shortcut
     json.forEach(shortcut_ => {
 
         var shortcut = document.createElement('div');
-        shortcut = generateShortcut(shortcut, shortcut_.url, shortcut_.type, explorer.getAttribute('lib'), shortcut_.other);
+        shortcut = generateShortcut(shortcut, shortcut_.url, shortcut_.type, shortcut_.location, shortcut_.other);
 
         switch (shortcut_.type) {
             case 'png':
                 shortcut.addEventListener('click', () => {
-                    updateImage(explorer.getAttribute('lib'), shortcut_.url);
+                    updateImage(shortcut_.location, shortcut_.url);
                     openWindow(imageTab);
                 });
                 break;
@@ -53,7 +68,7 @@ function actuallyFillExplorer(json) {
                 break;
         }
 
-        explorer.appendChild(shortcut);
+        appendLoc.appendChild(shortcut);
 
     });
 };
@@ -69,7 +84,7 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
             break;
 
         case 'pdf':
-            icon.setAttribute('src', 'icons/file_lines-0.png');
+            icon.setAttribute('src', '../icons/file_lines-0.png');
             break;
 
         case 'link':
@@ -77,7 +92,7 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
             break;
         
         case 'folder':
-            icon.setAttribute('src', "icons/directory_open_file_mydocs-5.png");
+            icon.setAttribute('src', "../icons/directory_open_file_mydocs-5.png");
             break;
     
         default:
