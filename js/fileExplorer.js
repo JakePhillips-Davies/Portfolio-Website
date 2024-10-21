@@ -23,21 +23,21 @@ explorers.forEach(explorer => {
 
             switch (shortcut_.type) {
                 case 'png':
-                    shortcut.addEventListener('dblclick', () => {
+                    shortcut.addEventListener('click', () => {
                         updateImage(explorer.getAttribute('lib'), shortcut_.url);
                         openWindow(imageTab);
                     });
                     break;
         
                 case 'pdf':
-                    shortcut.addEventListener('dblclick', () => {
+                    shortcut.addEventListener('click', () => {
                         updatePdf(explorer.getAttribute('lib'), shortcut_.url);
                         openWindow(pdfTab);
                     });
                     break;
         
                 case 'link':
-                    shortcut.addEventListener('dblclick', () => {
+                    shortcut.addEventListener('click', () => {
                         window.open(shortcut_.link, '_blank');
                     });
                     break;
