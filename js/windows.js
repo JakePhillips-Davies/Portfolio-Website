@@ -29,6 +29,8 @@ function closeSearchBars() {
 }
 
 taskbarTabs.forEach(tab => {
+
+    tab.checked = false;
     
     if(tab.tagName == "INPUT")
         tab.addEventListener('click', (e) => {
