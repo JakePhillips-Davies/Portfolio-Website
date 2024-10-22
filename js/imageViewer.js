@@ -12,8 +12,9 @@ function updateImage(loc, url_) {
     namespaces.forEach(name => {
         name.innerHTML = url_;
     });
+
+    imgZoomBar.updateZoomLevel();
 }
 
-
-const imgZoom = document.getElementById('imgZoom')
+const imgZoom = document.getElementById('imgZoom');
 var imgZoomBar = new zoomBar(imgZoom.querySelector('.zoomIn'), imgZoom.querySelector('.zoomOut'), imgZoom.querySelector('span'), imageCont);

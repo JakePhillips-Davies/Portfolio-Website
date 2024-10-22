@@ -121,18 +121,19 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
 class zoomBar {
     zoomLevel;
     initRemSize;
+    zoomee;
 
-    constructor(zoomIn, zoomOut, display, zoomee) {
+    constructor(zoomIn, zoomOut, display, zoomee_) {
         this.zoomLevel = 1;
         this.initRemSize = 50;
-        
+        this.zoomee = zoomee_;
 
         zoomIn.addEventListener('click', () => {
             this.zoomLevel *= 2;
 
             display.innerText = this.zoomLevel + 'x';
 
-            zoomee.querySelector('img').style.width = this.zoomLevel * this.initRemSize + 'rem';
+            this.updateZoomLevel();
             
         });
         zoomOut.addEventListener('click', () => {
@@ -140,15 +141,18 @@ class zoomBar {
             
             display.innerText = this.zoomLevel + 'x';
 
-            zoomee.querySelector('img').style.width = this.zoomLevel * this.initRemSize + 'rem';
+            this.updateZoomLevel();
         });
         
+    }
+
+    updateZoomLevel() {
+        this.zoomee.querySelector('img').style.width = this.zoomLevel * this.initRemSize + 'rem';
     }
 
     getZoomLevel() {
         return this.zoomLevel;
     }
-
 }
 
 fetch(`assets/json/folders.json`).then(function (result) {
