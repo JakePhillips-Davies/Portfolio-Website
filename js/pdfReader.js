@@ -62,7 +62,7 @@ function loadPdf() {
 
 
 
-fetch(`../assets/json/pdfs.json`).then(function (result) {
+fetch(`assets/json/pdfs.json`).then(function (result) {
     result.json().then(function (json) {
         setupSearch(json);
     })

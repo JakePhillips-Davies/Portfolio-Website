@@ -5,7 +5,7 @@ const pdfTab = document.getElementById('pdfReader');
 const fileNamespaces = document.querySelectorAll('.fileExpName')
 
 
-fetch('../assets/json/desktop.json').then(function (result) {
+fetch('assets/json/desktop.json').then(function (result) {
     result.json().then(function (json) {
         actuallyFillExplorer(json, desktopFolder);
     });
@@ -21,7 +21,7 @@ function fillExplorer(src) {
     });
 
     fileNamespaces.forEach(namespace => {
-        var folderName = src.replace('../assets/json/', '').replace('.json', '');
+        var folderName = src.replace('assets/json/', '').replace('.json', '');
         namespace.innerHTML = folderName;
     });
 
@@ -84,7 +84,7 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
             break;
 
         case 'pdf':
-            icon.setAttribute('src', '../icons/file_lines-0.png');
+            icon.setAttribute('src', 'icons/file_lines-0.png');
             break;
 
         case 'link':
@@ -92,7 +92,7 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
             break;
         
         case 'folder':
-            icon.setAttribute('src', "../icons/directory_open_file_mydocs-5.png");
+            icon.setAttribute('src', "icons/directory_open_file_mydocs-5.png");
             break;
     
         default:
