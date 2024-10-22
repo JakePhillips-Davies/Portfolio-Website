@@ -4,21 +4,21 @@
         "type": "link",
         "other": "GitHub",
         "link": "https://github.com/JakePhillips-Davies",
-        "location": "../assets/desktop/"
+        "location": "assets/desktop/"
     },
     {
         "url": "Instagram.png",
         "type": "link",
         "other": "Instagram",
         "link": "https://www.instagram.com/jakephillipsdavies/",
-        "location": "../assets/desktop/"
+        "location": "assets/desktop/"
     },
     {
         "url": "LinkedIn-2.png",
         "type": "link",
         "other": "LinkedIn",
         "link": "https://www.linkedin.com/in/jake-phillips-davies-827426251/",
-        "location": "../assets/desktop/"
+        "location": "assets/desktop/"
     },
     {
         "url": "Resume.pdf",
