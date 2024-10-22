@@ -1,0 +1,14 @@
+[
+    {
+        "url": "nexusMods.png",
+        "type": "link",
+        "other": "Nexus Mods",
+        "link": "https://next.nexusmods.com/profile/KamiThe3rd/mods",
+        "location": "assets/skyrim/"
+    },
+    {
+        "url": "Skyrim Modding.pdf",
+        "type": "pdf",
+        "other": ""
+    }
+]

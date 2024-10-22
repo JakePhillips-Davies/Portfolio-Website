@@ -6,7 +6,7 @@
         "indent": 0
     },
     {
-        "folder": "Home",
+        "folder": "home",
         "name": "Home",
         "icon": "computer_explorer_cool-0.png",
         "indent": 2
@@ -18,7 +18,7 @@
         "indent": 4
     },
     {
-        "folder": "Art",
+        "folder": "art",
         "name": "Art",
         "icon": "paint_file-4.png",
         "indent": 4
