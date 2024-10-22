@@ -1,7 +1,9 @@
 const windows = document.querySelectorAll("#window");
 const taskbarTabs = document.getElementById("taskbarTabs").querySelectorAll(".taskbarButton");
 const mins = document.querySelectorAll("#min");
+const max = document.querySelectorAll("#max");
 const closes = document.querySelectorAll("#close");
+const searchBars = document.querySelectorAll(".searchDropdown")
 
 z = 100;
 
@@ -13,7 +15,18 @@ document.addEventListener('mousedown', function(e) {
         if(window.classList.contains("selectedWindow"))
             window.classList.remove("selectedWindow");
     });
+
+    searchBars.forEach(searchBar => {
+        if(!searchBar.contains(e.target))
+            searchBar.previousElementSibling.checked = false;
+    });
 });
+
+function closeSearchBars() {
+    searchBars.forEach(searchBar => {
+        searchBar.previousElementSibling.checked = false;
+    });
+}
 
 taskbarTabs.forEach(tab => {
     
@@ -335,6 +348,16 @@ mins.forEach(min => {
     min.addEventListener('click', (e) => {
         e.preventDefault();
         min.parentElement.parentElement.previousElementSibling.checked = false;
+    })
+});
+max.forEach(max => {
+    max.addEventListener('click', (e) => {
+        e.preventDefault();
+        max.parentElement.parentElement.style.top = 0;
+        max.parentElement.parentElement.style.left = 0;
+        max.parentElement.parentElement.style.width = window.innerWidth + "px";
+        taskbarHeight = document.getElementById('taskbar').offsetHeight;
+        max.parentElement.parentElement.style.height = window.innerHeight - 4 - taskbarHeight + "px";
     })
 });
 closes.forEach(close => {

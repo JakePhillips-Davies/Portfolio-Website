@@ -2,7 +2,12 @@ const explorer = document.getElementById('fileExplorer');
 const desktopFolder = document.getElementById('desktopFolder');
 const imageTab = document.getElementById('imageViewer');
 const pdfTab = document.getElementById('pdfReader');
-const fileNamespaces = document.querySelectorAll('.fileExpName')
+const fileNamespaces = document.querySelectorAll('.fileExpName');
+const folderSearchDropdown = document.getElementById('fileSearch');
+
+
+document.getElementById('welcome').checked = true;
+fillExplorer('assets/json/home.json', 'Home');
 
 
 fetch('assets/json/desktop.json').then(function (result) {
@@ -12,7 +17,7 @@ fetch('assets/json/desktop.json').then(function (result) {
 });
 
 
-function fillExplorer(src) {
+function fillExplorer(src, folderName) {
     //fetch json
     fetch(src).then(function (result) {
         result.json().then(function (json) {
@@ -21,10 +26,9 @@ function fillExplorer(src) {
     });
 
     fileNamespaces.forEach(namespace => {
-        var folderName = src.replace('assets/json/', '').replace('.json', '');
         namespace.innerHTML = folderName;
     });
-
+    
     explorer.innerText = '';
 }
 
@@ -47,7 +51,7 @@ function actuallyFillExplorer(json, appendLoc) {
     
             case 'pdf':
                 shortcut.addEventListener('click', () => {
-                    updatePdf(explorer.getAttribute('lib'), shortcut_.url);
+                    updatePdf('assets/pdf/', shortcut_.url);
                     openWindow(pdfTab);
                 });
                 break;
@@ -60,7 +64,8 @@ function actuallyFillExplorer(json, appendLoc) {
 
             case 'folder':
                 shortcut.addEventListener('click', () => {
-                    fillExplorer(shortcut_.other);
+                    openWindow(document.getElementById('fileExplorerWindow'));
+                    fillExplorer(shortcut_.location, shortcut_.url);
                 });
                 break;
         
@@ -92,7 +97,7 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
             break;
         
         case 'folder':
-            icon.setAttribute('src', "icons/directory_open_file_mydocs-5.png");
+            icon.setAttribute('src', "icons/" + other);
             break;
     
         default:
@@ -146,5 +151,24 @@ class zoomBar {
 
 }
 
+fetch(`assets/json/folders.json`).then(function (result) {
+    result.json().then(function (json) {
+        fileSetupSearch(json);
+    })
+})
+function fileSetupSearch(json) {
+    json.forEach(jsonFolder => {
+        
+        var folder = document.createElement('li')
+        folder.style.marginLeft = jsonFolder.indent + 'rem';
+        folder.innerHTML = '<img src="icons/' + jsonFolder.icon + '" alt=""></img>' + jsonFolder.name;
 
-document.getElementById('welcome').checked = true;
+        folder.addEventListener('click', () => {
+            fillExplorer('assets/json/' + jsonFolder.folder + '.json', jsonFolder.name);
+            closeSearchBars();
+        });
+
+        folderSearchDropdown.appendChild(folder);
+        
+    });
+}

@@ -193,3 +193,66 @@ input.taskbarButton:checked + .windowContent {
 
     cursor: w-resize;
 }
+
+/*-------------------------------------------------------------------*/
+
+.searchButton div {
+    margin-left: auto;
+    margin-right: 0;
+
+    height: calc(1.6rem - 4*var(--bevel-size));
+    width: calc(1.6rem - 4*var(--bevel-size));
+
+    background-color: var(--main-colour);
+    border: var(--bevel-size);
+    border-color: var(--outset);
+    border-style: solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.searchButton div p {
+    font-size: 0.7rem;
+}
+
+.searchDropdown {
+    display: none;
+
+    width: calc(12rem + 2*var(--bevel-size));
+    min-height: 6rem;
+    height: fit-content;
+
+    background-color: white;
+
+    border: calc(var(--bevel-size)/2);
+    border-style: solid;
+    border-color: black;
+
+    position: absolute;
+    z-index: 2000;
+    left: 0;
+    top: calc(100% - 0.2rem);
+}
+.searchButtonInpt:checked + .searchDropdown {
+    display: block;
+}
+.searchDropdown ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    font-size: 1rem;
+}
+.searchDropdown ul li {
+    padding: 0.3rem;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+.searchDropdown ul li img {
+    width: 1.6rem;
+}

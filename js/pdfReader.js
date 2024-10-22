@@ -75,6 +75,7 @@ function setupSearch(json) {
 
         pdf.addEventListener('click', () => {
             updatePdf(jsonPDF.loc, jsonPDF.url);
+            closeSearchBars();
         });
 
         searchDropdown.appendChild(pdf);

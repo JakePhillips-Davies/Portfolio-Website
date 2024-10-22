@@ -1,0 +1,20 @@
+[
+    {
+        "url": "Skyrim modding",
+        "type": "folder",
+        "other": "directory_open_file_mydocs-5.png",
+        "location": "assets/json/skyrimModding.json"
+    },
+    {
+        "url": "Gravity game",
+        "type": "folder",
+        "other": "directory_open_file_mydocs-5.png",
+        "location": "assets/json/gravityGame.json"
+    },
+    {
+        "url": "Uni",
+        "type": "folder",
+        "other": "directory_open_file_mydocs-5.png",
+        "location": "assets/json/uniGames.json"
+    } 
+]

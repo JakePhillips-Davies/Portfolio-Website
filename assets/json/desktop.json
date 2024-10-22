@@ -21,6 +21,12 @@
         "location": "assets/desktop/"
     },
     {
+        "url": "Games Projects",
+        "type": "folder",
+        "other": "cd_drive-3.png",
+        "location": "assets/json/gameProjects.json"
+    },
+    {
         "url": "Resume.pdf",
         "type": "pdf",
         "other": ""

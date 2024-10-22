@@ -10,7 +10,7 @@ listButtons.forEach(button_ => {
     button_.addEventListener('click', () => {
         if (button_.getAttribute("opens") == "folder") {
             openWindow(document.getElementById('fileExplorerWindow'));
-            fillExplorer(button_.getAttribute("target"));
+            fillExplorer(button_.getAttribute("target"), button_.getAttribute('targetName'));
         }
         else openWindow(document.getElementById(button_.getAttribute("target")));
     });

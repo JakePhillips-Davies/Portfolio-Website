@@ -53,7 +53,7 @@
             -->
         </main>
         <footer>
-            <div class="taskbar">
+            <div id="taskbar">
                 <!-------------------------------------------------------------->
                 <input type="checkbox" id="startButton" class="taskbarButton">
                 <div class="windowContent" id="startMenu">
@@ -62,25 +62,25 @@
                     </span>
                     <div>
                         <ul id="startList">
-                            <button target="assets/json/art.json" opens="folder">
+                            <button target="assets/json/home.json" targetName="Home" opens="folder">
+                                <img src="icons/computer_explorer_cool-0.png" alt="">
+                                <p><u>H</u>ome</p>
+                            </button>
+                            <button target="assets/json/gameProjects.json" targetName="Game Projects" opens="folder">
+                                <img src="icons/cd_drive-3.png" alt="">
+                                <p><u>G</u>ame projects</p>
+                            </button>
+                            <button target="assets/json/art.json" targetName="Art" opens="folder">
                                 <img src="icons/paint_file-4.png" alt="">
                                 <p><u>A</u>rt</p>
                             </button>
-                            <button target="pdfReader">
-                                <img src="icons/directory_open_file_mydocs-5.png" alt="">
-                                <p><u>P</u>dfs</p>
-                            </button>
-                            <button target="assets/json/images.json" opens="folder">
-                                <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                            <button target="assets/json/images.json" targetName="Images" opens="folder">
+                                <img src="icons/camera3-2.png" alt="">
                                 <p><u>I</u>mages</p>
                             </button>
-                            <button target="assets/json/cat.json" opens="folder">
+                            <button target="assets/json/cat.json" targetName="Cats" opens="folder">
                                 <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
                                 <p><u>C</u>at pictures</p>
-                            </button>
-                            <button target="assets/json/home.json" opens="folder">
-                                <img src="icons/computer_explorer_cool-0.png" alt="">
-                                <p><u>H</u>ome</p>
                             </button>
                             <button target="welcome">
                                 <img src="icons/file_lines-0.png" alt="">
@@ -162,7 +162,7 @@
                             <div class="resizer" id="l"></div>
                         
                         <div class="handle">
-                            <img src="icons/directory_open_file_mydocs-5.png" alt="">
+                            <img src="icons/file_lines-0.png" alt="">
                             <span class="pdfNameNeeded">--.pdf</span>
                             <div></div>
                             <button type="button" id="min"><span></span></button>
@@ -181,7 +181,7 @@
                         </div>
                     </div>
                     <label for="pdfReader" class="taskbarButton deactive">
-                        <img src="icons/directory_open_file_mydocs-5.png" alt="">
+                        <img src="icons/file_lines-0.png" alt="">
                         <span class="pdfNameNeeded">--.pdf</span>
                     </label>
                     <!-------------------------------------------------------------->
@@ -199,7 +199,7 @@
                             <div class="resizer" id="l"></div>
                     
                         <div class="handle">
-                            <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                            <img src="icons/camera3-2.png" alt="">
                             <span class="imgNameNeeded">Images</span>
                             <div></div>
                             <button id="min"><span></span></button>
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                     <label for="imageViewer" class="taskbarButton deactive">
-                        <img src="icons/directory_open_file_mydocs_2k-4.png" alt="">
+                        <img src="icons/camera3-2.png" alt="">
                         <span class="imgNameNeeded">Images</span>
                     </label>
                     <!-------------------------------------------------------------->
@@ -244,7 +244,11 @@
                             <button id="close">X</button>
                         </div>
                         <nav id="fileNav">
-
+                            <input class="searchButtonInpt" type="checkbox" id="fileSearchButton">
+                            <div class="searchDropdown">
+                                <ul id="fileSearch"></ul>
+                            </div>
+                            <label class="searchButton" for="fileSearchButton"><span class="fileExpName">files</span><div><p>▼</p></div></label>
                         </nav>
                         <div id="fileExplorer" src="">
                             
