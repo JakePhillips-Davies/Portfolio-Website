@@ -6,10 +6,10 @@
         "location": "assets/json/skyrimModding.json"
     },
     {
-        "url": "Gravity game",
+        "url": "N-Body game",
         "type": "folder",
         "other": "directory_open_file_mydocs-5.png",
-        "location": "assets/json/gravityGame.json"
+        "location": "assets/json/nBodyGame.json"
     },
     {
         "url": "Uni",
