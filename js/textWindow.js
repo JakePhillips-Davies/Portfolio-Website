@@ -3,7 +3,7 @@ const txtNamesNeeded = document.querySelectorAll('.txtNameNeeded')
 
 function openTxtFile(txtFile, txtName) {
 
-    fetch('/assets/txts/' + txtFile).then(function (result) {
+    fetch('assets/txts/' + txtFile).then(function (result) {
         result.text().then(function (text) {
             textBox.innerHTML = text;
         })
