@@ -2,11 +2,12 @@ const explorer = document.getElementById('fileExplorer');
 const desktopFolder = document.getElementById('desktopFolder');
 const imageTab = document.getElementById('imageViewer');
 const pdfTab = document.getElementById('pdfReader');
+const txtTab = document.getElementById('textWindow');
 const fileNamespaces = document.querySelectorAll('.fileExpName');
 const folderSearchDropdown = document.getElementById('fileSearch');
 
 
-document.getElementById('welcome').checked = true;
+document.getElementById('textWindow').checked = true;
 fillExplorer('assets/json/home.json', 'Home');
 
 
@@ -62,6 +63,13 @@ function actuallyFillExplorer(json, appendLoc) {
                 });
                 break;
 
+            case 'txt':
+                shortcut.addEventListener('click', () => {
+                    openTxtFile(shortcut_.url, shortcut_.other);
+                    openWindow(txtTab);
+                });
+                break;
+
             case 'folder':
                 shortcut.addEventListener('click', () => {
                     openWindow(document.getElementById('fileExplorerWindow'));
@@ -94,6 +102,10 @@ function generateShortcut(shortcut_, url, fileType, loc, other) {
 
         case 'link':
             icon.setAttribute('src', loc + url);
+            break;
+
+        case 'txt':
+            icon.setAttribute('src', 'icons/file_lines-0.png');
             break;
         
         case 'folder':

@@ -1,4 +1,4 @@
-#welcomeText {
+#textBox {
     flex: 1;
     margin: 0.25rem;
 
@@ -11,14 +11,15 @@
     overflow: scroll;
 }
 
-#welcomeText h1 {
+#textBox h1 {
     margin: 0;
     padding-top: 4rem;
     padding-bottom: 4rem;
     
     text-align: center;
     font-weight: 900;
+}
 
-    color: white;
-    background-color: rgb(168, 0, 0);
+#textBox p {
+    margin: 0.5rem;
 }

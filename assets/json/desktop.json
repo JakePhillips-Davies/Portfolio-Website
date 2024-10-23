@@ -27,6 +27,11 @@
         "location": "assets/json/gameProjects.json"
     },
     {
+        "url": "contact-me.txt",
+        "type": "txt",
+        "other": "Contacts"
+    },
+    {
         "url": "Resume.pdf",
         "type": "pdf",
         "other": ""

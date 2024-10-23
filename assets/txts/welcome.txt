@@ -1,0 +1,18 @@
+<h1 style="color: white; background-color: rgb(168, 0, 0);">Welcome!</h1>
+<p>
+    Hi, I'm <b>Jake Phillips-Davies</b>. I am currently a computer science student
+    studying games development, I am a self-taught artist, and this is my website.
+</p>
+<p>
+    Thank you for visiting! It is interactive and functions much like you'd expect from
+    a desktop, so feel free to have a look around. It doesn't work well on mobile yet
+    however, sadly.
+</p>
+<p>
+    I typically enjoy using game-dev and digital drawing as my creative outlet. Today however,
+    I am using web-dev as a creative outlet to hopefully bring you a more enjoyable visit to
+    my portfolio.
+</p>
+<p>
+    This website was made as a hobby project using HTML, CSS and JS, so please mind the rough edges. 
+</p>
