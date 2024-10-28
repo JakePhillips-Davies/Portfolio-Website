@@ -6,5 +6,9 @@
     {
         "url": "Anatomy_Studies.pdf",
         "loc": "assets/pdf/"
+    },
+    {
+        "url": "N-Body_Game.pdf",
+        "loc": "assets/pdf/"
     }
 ]
