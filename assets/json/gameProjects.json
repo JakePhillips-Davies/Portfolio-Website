@@ -6,23 +6,9 @@
         "location": "assets/json/skyrimModding.json"
     },
     {
-<<<<<<< Updated upstream
         "url": "N-Body game",
         "type": "folder",
         "other": "directory_open_file_mydocs-5.png",
         "location": "assets/json/nBodyGame.json"
-    },
-    {
-        "url": "Uni",
-        "type": "folder",
-        "other": "directory_open_file_mydocs-5.png",
-        "location": "assets/json/uniGames.json"
-    } 
-=======
-        "url": "N-body game",
-        "type": "folder",
-        "other": "directory_open_file_mydocs-5.png",
-        "location": "assets/json/nBodyGame.json"
     }
->>>>>>> Stashed changes
 ]
