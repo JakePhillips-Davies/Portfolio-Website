@@ -1,0 +1,14 @@
+.time {
+    width: 8rem;
+    height: var(--tab-height);
+    
+    box-shadow: var(--bevel-inset-light);
+    
+    background-color: var(--main-colour);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-weight: bold;
+}

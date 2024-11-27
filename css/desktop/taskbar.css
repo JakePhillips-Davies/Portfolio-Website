@@ -1,0 +1,91 @@
+:root {
+    --tab-padding: var(--bevel-size);
+    --tab-height: calc(var(--font-size)*2 + var(--tab-padding));
+}
+
+#taskbar {
+    width: 100%;
+    padding: calc(var(--bevel-size)*1.5); 
+
+    background-color: var(--colour-background-1);
+
+    border: none;
+    border-top: calc(var(--bevel-size)*0.5);
+    border-top-color: var(--colour-bevel-1);
+    border-top-style: solid;
+
+    box-shadow: 0 calc(-0.5 * var(--bevel-size)) var(--colour-background-1);
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: start;
+}
+
+/*-------------------------------------------------------------------*/
+
+.taskbarTab, #startButton {
+    padding: calc(var(--bevel-size));
+    padding-bottom: calc(var(--bevel-size) + var(--tab-padding));
+    padding-right: calc(var(--bevel-size) + var(--tab-padding));
+
+    height: var(--tab-height);
+
+    box-shadow: var(--bevel-outset);
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+#startButton {
+    font-weight: bold;
+}
+
+.taskbarTab.selected {
+    font-weight: bold;
+
+    box-shadow: var(--bevel-inset);
+    
+    padding: calc(var(--bevel-size));
+    padding-top: calc(var(--bevel-size) + var(--tab-padding));
+    
+    background-image: conic-gradient(
+        white 90deg,
+        var(--main-colour) 90deg 180deg,
+        white 180deg 270deg,
+        var(--main-colour) 270deg
+    );
+    background-repeat: repeat;
+    background-size: var(--bevel-size) var(--bevel-size);
+    background-position: top left;
+}
+#startButton.selected {
+    box-shadow: var(--bevel-inset);
+    
+    padding: calc(var(--bevel-size));
+    padding-top: calc(var(--bevel-size) + var(--tab-padding));
+    padding-left: calc(var(--bevel-size) + var(--tab-padding));
+}
+
+.taskbarTab, #startButton img {
+    height: calc(var(--font-size) * 1.9);
+    padding-right: var(--bevel-size);
+    padding-left: var(--bevel-size);
+}
+
+.taskbarSpacer {
+    height: var(--tab-height);
+    width: var(--bevel-size);
+
+    box-shadow: var(--bevel-spacer);
+
+    margin-left: calc(var(--bevel-size)*2);
+    margin-right: calc(var(--bevel-size)*2);
+}
+
+/*-------------------------------------------------------------------*/
+
+#taskbarTray {
+    flex: 1;
+}

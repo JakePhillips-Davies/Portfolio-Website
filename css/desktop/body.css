@@ -1,0 +1,20 @@
+body {
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family:  'MSW98UI', Tahoma, sans-serif;
+    font-size: var(--font-size);
+    font-weight: normal;
+    color: var(--colour-font);
+
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
