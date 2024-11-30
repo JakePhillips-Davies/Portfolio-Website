@@ -1,8 +1,0 @@
-#desktop {
-    background-color: var(--colour-desktop);
-
-    flex-grow: 1;
-    width: 100%;
-
-    overflow: hidden;
-}

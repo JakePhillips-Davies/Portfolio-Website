@@ -1,0 +1,10 @@
+:root {
+    --root-font-size: 1.4rem;
+
+    /*          Colours          */
+    /*---------------------------*/
+    --root-font-colour: hsl(0, 0%, 100%);
+    --root-background-colour: hsl(0, 0%, 10%);
+    /*---------------------------*/
+   
+}

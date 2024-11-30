@@ -1,0 +1,26 @@
+{
+    "name": "C",
+    "type": "folder",
+    "children": [
+        {
+            "name": "Desktop",
+            "type": "folder",
+            "children": []
+        },
+        {
+            "name": "My Documents",
+            "type": "folder",
+            "children": []
+        },
+        {
+            "name": "Pictures",
+            "type": "folder",
+            "children": []
+        },
+        {
+            "name": "Videos",
+            "type": "folder",
+            "children": []
+        }
+    ]
+}
