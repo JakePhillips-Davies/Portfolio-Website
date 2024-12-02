@@ -1,25 +1,30 @@
 {
-    "name": "C",
+    "name": "-C-Drive",
     "type": "folder",
+    "path": "-C-Drive",
     "children": [
         {
             "name": "Desktop",
             "type": "folder",
+            "path": "-C-Drive\\Desktop",
             "children": []
         },
         {
             "name": "My Documents",
             "type": "folder",
+            "path": "-C-Drive\\My Documents",
             "children": []
         },
         {
             "name": "Pictures",
             "type": "folder",
+            "path": "-C-Drive\\Pictures",
             "children": []
         },
         {
             "name": "Videos",
             "type": "folder",
+            "path": "-C-Drive\\Videos",
             "children": []
         }
     ]
