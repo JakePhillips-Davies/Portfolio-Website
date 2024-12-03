@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'MSW98UI';
-    src: url('../../font/MSW98UI-Regular.woff2') format('woff2'); 
+    src: url('font/MSW98UI-Regular.woff2') format('woff2'); 
     font-weight: normal;
 }
 @font-face {
     font-family: 'MSW98UI';
-    src: url('../../font/MSW98UI-Bold.woff2') format('woff2'); 
+    src: url('font/MSW98UI-Bold.woff2') format('woff2'); 
     font-weight: bold;
 }
 
-#masterTray {    
+#ROOT {    
     height: 100vh;
     width: 100vw;
 

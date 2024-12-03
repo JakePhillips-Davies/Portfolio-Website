@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "target": "ES5",
+      "target": "es2023",
       "module": "CommonJS",
       "outDir": "site"
     }

@@ -53,4 +53,4 @@ def makeJSONFromPath(path, name):
 #############################################################################
 
 makeJSONFromPath("-BIOS", "Bios")
-makeJSONFromPath("-C-Drive", "C-Drive")
+makeJSONFromPath("-C", "C-Drive")

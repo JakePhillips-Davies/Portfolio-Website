@@ -21,8 +21,57 @@
             "path": "-BIOS\\Console",
             "children": [
                 {
+                    "name": "console.css",
+                    "path": "-BIOS\\Console\\console.css",
+                    "type": ".css"
+                },
+                {
                     "name": "Console.js",
                     "path": "-BIOS\\Console\\Console.js",
+                    "type": ".js"
+                }
+            ]
+        },
+        {
+            "name": "font",
+            "type": "folder",
+            "path": "-BIOS\\font",
+            "children": [
+                {
+                    "name": "MSW98UI-Bold.woff2",
+                    "path": "-BIOS\\font\\MSW98UI-Bold.woff2",
+                    "type": ".woff2"
+                },
+                {
+                    "name": "MSW98UI-Regular.woff2",
+                    "path": "-BIOS\\font\\MSW98UI-Regular.woff2",
+                    "type": ".woff2"
+                }
+            ]
+        },
+        {
+            "name": "root.css",
+            "path": "-BIOS\\root.css",
+            "type": ".css"
+        },
+        {
+            "name": "rootVariables.css",
+            "path": "-BIOS\\rootVariables.css",
+            "type": ".css"
+        },
+        {
+            "name": "Trays",
+            "type": "folder",
+            "path": "-BIOS\\Trays",
+            "children": [
+                {
+                    "name": "tray.css",
+                    "path": "-BIOS\\Trays\\tray.css",
+                    "type": ".css"
+                },
+                {
+                    "name": "Tray.js",
+                    "path": "-BIOS\\Trays\\Tray.js",
                     "type": ".js"
                 }
             ]
