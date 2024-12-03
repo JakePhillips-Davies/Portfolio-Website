@@ -40,6 +40,8 @@ class consoleObj {
 
     private currentDirectory : any;
 
+    private runningCommand : boolean = false;
+
 
 
     /**
@@ -88,20 +90,68 @@ class consoleObj {
     }
 
     public RunCommand(commandFull_ : string) {
+        if (this.runningCommand) {
+            return;
+        }
+
+        this.runningCommand = true;
+
         this.PrintLn(this.FormatConsolePath() + commandFull_);
 
-        let commandSplit : Array<string> = commandFull_.split(" ");
+        let commandSplit : Array<string> = commandFull_.split(/\s+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/); // stole from stack overflow somewhere, I hate regex
+
+        //console.log(commandSplit);
 
         switch (commandSplit[0].toLowerCase()) {
             case "dir":
-                if (commandSplit.length <= 1) {
-                    this.PrintDirectory(C_DRIVE.path);
-                }else{
-                    this.PrintDirectory(commandSplit[1]);
+                if (commandSplit.length <= 1) { // if only dir
+                    this.PrintDirectory(this.currentDirectory.path);
+                }else{ 
+                    let inputtedPath = commandSplit[1].replaceAll('"', "");
+
+                    if (inputtedPath.toLowerCase() == "-c\\") {
+                        this.PrintDirectory(C_DRIVE.path);
+                    }
+                    else if (inputtedPath.toLowerCase().includes("-c\\")) { // changes based on whether the user calls -c\... or just ...
+                        this.PrintDirectory(inputtedPath);
+                    }
+                    else {
+                        this.PrintDirectory(this.currentDirectory.path + "\\" + inputtedPath);
+                    }
+                }
+                break;
+
+            case "cd":
+                if (commandSplit.length <= 1) { // if only dir
+                    this.PrintLn(this.currentDirectory.path);
+                }else{ 
+                    let inputtedPath = commandSplit[1].replaceAll('"', "");
+
+                    if (inputtedPath.toLowerCase() == "-c\\") {
+                        this.currentDirectory = GetDirectoryByExactPath(C_DRIVE.path);
+                    }
+                    else if (inputtedPath.toLowerCase().includes("-c\\")) { // changes based on whether the user calls -c\... or just ...
+                        this.currentDirectory = GetDirectoryByExactPath(inputtedPath);
+                    }
+                    else {
+                        this.currentDirectory = GetDirectoryByExactPath(this.currentDirectory.path + "\\" + inputtedPath);
+                    }
+                }
+                this.inputField.getElementsByTagName("pre")[0].innerHTML = this.FormatConsolePath();
+                break;
+            
+            case "cd..":
+                if (this.currentDirectory.parentPath == "") {
+                    this.PrintLn("Error: cannot go higher");
+                }
+                else {
+                    this.currentDirectory = GetDirectoryByExactPath(this.currentDirectory.parentPath);
+                    this.inputField.getElementsByTagName("pre")[0].innerHTML = this.FormatConsolePath();
                 }
                 break;
 
             case "help":
+                this.PrintLn("dir [directory] : print contents of relative directory");
                 break;
         
             default:
@@ -110,6 +160,8 @@ class consoleObj {
         }
 
         this.PrintLn("");
+
+        this.runningCommand = false;
     }
 
     // Logs
@@ -123,6 +175,8 @@ class consoleObj {
     public PrintDirectory(path_ : string) {
         let inputDirectory : any = GetDirectoryByExactPath(path_);
 
+        //josh.PrintLn(path_);
+
         if (inputDirectory == null) {
             this.PrintLn("Error: directory not found!");
             return;
@@ -132,9 +186,31 @@ class consoleObj {
         this.PrintLn(" Directory of " + inputDirectory.path);
         this.PrintLn(" ");
 
-        inputDirectory.children.forEach(childDirectory_ => {
-            this.PrintLn("" + childDirectory_.name);
+        //counters
+        let fileNum : number = 0;
+        let folderNum : number = 0;
+        
+        inputDirectory.children.forEach(childDirectory_ => { //Yea I hate this too lol, cba doing it better
+            let name = "<span style=\"min-width:calc(var(--root-font-size)*10);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + childDirectory_.name + "</span>";
+            let size = "<span style=\"min-width:calc(var(--root-font-size)*5);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + childDirectory_.size + "</span>";
+            let modified = "<span style=\"min-width:calc(var(--root-font-size)*5);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + childDirectory_.modified + "</span>";
+            
+            let dirIndicatorString : string = " ";
+            if (childDirectory_.type == "folder") {
+                dirIndicatorString = " &ltDIR&gt";
+
+                folderNum++;
+            }else {
+                fileNum++;
+            }
+
+            let dirIndicator = "<span style=\"min-width:calc(var(--root-font-size)*3);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + dirIndicatorString + "</span>";
+        
+            this.PrintLn(name + dirIndicator + size + modified);
         });
+        
+        this.PrintLn("                    " + fileNum + " File(s)");
+        this.PrintLn("                    " + folderNum + " Folder(s)");
     }
 
 

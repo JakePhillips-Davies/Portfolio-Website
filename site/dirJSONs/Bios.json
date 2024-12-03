@@ -2,15 +2,24 @@
     "name": "-BIOS",
     "type": "folder",
     "path": "-BIOS",
+    "parentPath": "",
+    "size": " ",
+    "modified": "12~03~2024 20:38:35",
     "children": [
         {
             "name": "App_Loader",
             "type": "folder",
             "path": "-BIOS\\App_Loader",
+            "parentPath": "-BIOS",
+            "size": " ",
+            "modified": "12~03~2024 20:38:35",
             "children": [
                 {
                     "name": "AppLoader.js",
                     "path": "-BIOS\\App_Loader\\AppLoader.js",
+                    "parentPath": "-BIOS\\App_Loader",
+                    "modified": "12~03~2024 20:38:35",
+                    "size": 0,
                     "type": ".js"
                 }
             ]
@@ -19,15 +28,24 @@
             "name": "Console",
             "type": "folder",
             "path": "-BIOS\\Console",
+            "parentPath": "-BIOS",
+            "size": " ",
+            "modified": "12~03~2024 20:38:35",
             "children": [
                 {
                     "name": "console.css",
                     "path": "-BIOS\\Console\\console.css",
+                    "parentPath": "-BIOS\\Console",
+                    "modified": "12~03~2024 20:38:35",
+                    "size": 974,
                     "type": ".css"
                 },
                 {
                     "name": "Console.js",
                     "path": "-BIOS\\Console\\Console.js",
+                    "parentPath": "-BIOS\\Console",
+                    "modified": "12~03~2024 22:56:37",
+                    "size": 15423,
                     "type": ".js"
                 }
             ]
@@ -36,15 +54,24 @@
             "name": "font",
             "type": "folder",
             "path": "-BIOS\\font",
+            "parentPath": "-BIOS",
+            "size": " ",
+            "modified": "12~03~2024 20:38:35",
             "children": [
                 {
                     "name": "MSW98UI-Bold.woff2",
                     "path": "-BIOS\\font\\MSW98UI-Bold.woff2",
+                    "parentPath": "-BIOS\\font",
+                    "modified": "12~03~2024 20:38:35",
+                    "size": 13988,
                     "type": ".woff2"
                 },
                 {
                     "name": "MSW98UI-Regular.woff2",
                     "path": "-BIOS\\font\\MSW98UI-Regular.woff2",
+                    "parentPath": "-BIOS\\font",
+                    "modified": "12~03~2024 20:38:35",
+                    "size": 50004,
                     "type": ".woff2"
                 }
             ]
@@ -52,26 +79,41 @@
         {
             "name": "root.css",
             "path": "-BIOS\\root.css",
+            "parentPath": "-BIOS",
+            "modified": "12~03~2024 20:38:35",
+            "size": 571,
             "type": ".css"
         },
         {
             "name": "rootVariables.css",
             "path": "-BIOS\\rootVariables.css",
+            "parentPath": "-BIOS",
+            "modified": "12~03~2024 20:38:35",
+            "size": 250,
             "type": ".css"
         },
         {
             "name": "Trays",
             "type": "folder",
             "path": "-BIOS\\Trays",
+            "parentPath": "-BIOS",
+            "size": " ",
+            "modified": "12~03~2024 20:38:35",
             "children": [
                 {
                     "name": "tray.css",
                     "path": "-BIOS\\Trays\\tray.css",
+                    "parentPath": "-BIOS\\Trays",
+                    "modified": "12~03~2024 20:38:35",
+                    "size": 104,
                     "type": ".css"
                 },
                 {
                     "name": "Tray.js",
                     "path": "-BIOS\\Trays\\Tray.js",
+                    "parentPath": "-BIOS\\Trays",
+                    "modified": "12~03~2024 22:56:37",
+                    "size": 6783,
                     "type": ".js"
                 }
             ]
