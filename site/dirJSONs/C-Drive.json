@@ -4,7 +4,7 @@
     "path": "-C",
     "parentPath": "",
     "size": " ",
-    "modified": "11~30~2024 12:28:58",
+    "modified": "12~06~2024 17:24:45",
     "children": [
         {
             "name": "Desktop",
@@ -37,7 +37,7 @@
                     "path": "-C\\Pictures\\20231212_153717.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 2423141,
+                    "size": "2423141",
                     "type": ".jpg"
                 },
                 {
@@ -45,7 +45,7 @@
                     "path": "-C\\Pictures\\20231212_153725.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 2623201,
+                    "size": "2623201",
                     "type": ".jpg"
                 },
                 {
@@ -53,7 +53,7 @@
                     "path": "-C\\Pictures\\20231212_153903.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 1847387,
+                    "size": "1847387",
                     "type": ".jpg"
                 },
                 {
@@ -61,7 +61,7 @@
                     "path": "-C\\Pictures\\20231313_153903.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 644699,
+                    "size": "644699",
                     "type": ".jpg"
                 },
                 {
@@ -69,7 +69,7 @@
                     "path": "-C\\Pictures\\20240117_181252-01.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 2485441,
+                    "size": "2485441",
                     "type": ".jpg"
                 },
                 {
@@ -77,7 +77,7 @@
                     "path": "-C\\Pictures\\20240202_024514.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 7125601,
+                    "size": "7125601",
                     "type": ".jpg"
                 },
                 {
@@ -85,7 +85,7 @@
                     "path": "-C\\Pictures\\20240411_140052.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 8583766,
+                    "size": "8583766",
                     "type": ".jpg"
                 },
                 {
@@ -93,7 +93,7 @@
                     "path": "-C\\Pictures\\20240426_171713.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 5345259,
+                    "size": "5345259",
                     "type": ".jpg"
                 },
                 {
@@ -101,7 +101,7 @@
                     "path": "-C\\Pictures\\20240502_113823.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:11",
-                    "size": 7576045,
+                    "size": "7576045",
                     "type": ".jpg"
                 },
                 {
@@ -109,7 +109,7 @@
                     "path": "-C\\Pictures\\20240507_135431.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 8337127,
+                    "size": "8337127",
                     "type": ".jpg"
                 },
                 {
@@ -117,7 +117,7 @@
                     "path": "-C\\Pictures\\20240510_145616-01.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 5015208,
+                    "size": "5015208",
                     "type": ".jpg"
                 },
                 {
@@ -125,7 +125,7 @@
                     "path": "-C\\Pictures\\20240518_173621.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 8786330,
+                    "size": "8786330",
                     "type": ".jpg"
                 },
                 {
@@ -133,7 +133,7 @@
                     "path": "-C\\Pictures\\20240525_011157.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 6374385,
+                    "size": "6374385",
                     "type": ".jpg"
                 },
                 {
@@ -141,7 +141,7 @@
                     "path": "-C\\Pictures\\20240820_200519.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 6767367,
+                    "size": "6767367",
                     "type": ".jpg"
                 },
                 {
@@ -158,7 +158,7 @@
                     "path": "-C\\Pictures\\Snapchat-119227437-01.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 1605186,
+                    "size": "1605186",
                     "type": ".jpg"
                 },
                 {
@@ -166,7 +166,7 @@
                     "path": "-C\\Pictures\\Snapchat-519430827-01.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 481119,
+                    "size": "481119",
                     "type": ".jpg"
                 },
                 {
@@ -174,8 +174,62 @@
                     "path": "-C\\Pictures\\Snapchat-566864532-01.jpg",
                     "parentPath": "-C\\Pictures",
                     "modified": "12~03~2024 20:38:12",
-                    "size": 1489218,
+                    "size": "1489218",
                     "type": ".jpg"
+                }
+            ]
+        },
+        {
+            "name": "Program Files",
+            "type": "folder",
+            "path": "-C\\Program Files",
+            "parentPath": "-C",
+            "size": " ",
+            "modified": "12~06~2024 17:24:45",
+            "children": [
+                {
+                    "name": "Win8",
+                    "type": "folder",
+                    "path": "-C\\Program Files\\Win8",
+                    "parentPath": "-C\\Program Files",
+                    "size": " ",
+                    "modified": "12~05~2024 22:56:48",
+                    "children": [
+                        {
+                            "name": "Fonts",
+                            "type": "folder",
+                            "path": "-C\\Program Files\\Win8\\Fonts",
+                            "parentPath": "-C\\Program Files\\Win8",
+                            "size": " ",
+                            "modified": "12~05~2024 22:57:14",
+                            "children": [
+                                {
+                                    "name": "MSW98UI-Bold.woff2",
+                                    "path": "-C\\Program Files\\Win8\\Fonts\\MSW98UI-Bold.woff2",
+                                    "parentPath": "-C\\Program Files\\Win8\\Fonts",
+                                    "modified": "12~03~2024 20:38:35",
+                                    "size": "13988",
+                                    "type": ".woff2"
+                                },
+                                {
+                                    "name": "MSW98UI-Regular.woff2",
+                                    "path": "-C\\Program Files\\Win8\\Fonts\\MSW98UI-Regular.woff2",
+                                    "parentPath": "-C\\Program Files\\Win8\\Fonts",
+                                    "modified": "12~03~2024 20:38:35",
+                                    "size": "50004",
+                                    "type": ".woff2"
+                                },
+                                {
+                                    "name": "winFonts.css",
+                                    "path": "-C\\Program Files\\Win8\\Fonts\\winFonts.css",
+                                    "parentPath": "-C\\Program Files\\Win8\\Fonts",
+                                    "modified": "12~05~2024 22:57:24",
+                                    "size": "261",
+                                    "type": ".css"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

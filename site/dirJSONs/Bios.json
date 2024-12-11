@@ -4,7 +4,7 @@
     "path": "-BIOS",
     "parentPath": "",
     "size": " ",
-    "modified": "12~03~2024 20:38:35",
+    "modified": "12~05~2024 23:04:49",
     "children": [
         {
             "name": "App_Loader",
@@ -19,7 +19,7 @@
                     "path": "-BIOS\\App_Loader\\AppLoader.js",
                     "parentPath": "-BIOS\\App_Loader",
                     "modified": "12~03~2024 20:38:35",
-                    "size": 0,
+                    "size": "0",
                     "type": ".js"
                 }
             ]
@@ -36,16 +36,16 @@
                     "name": "console.css",
                     "path": "-BIOS\\Console\\console.css",
                     "parentPath": "-BIOS\\Console",
-                    "modified": "12~03~2024 20:38:35",
-                    "size": 974,
+                    "modified": "12~05~2024 22:29:15",
+                    "size": "960",
                     "type": ".css"
                 },
                 {
                     "name": "Console.js",
                     "path": "-BIOS\\Console\\Console.js",
                     "parentPath": "-BIOS\\Console",
-                    "modified": "12~03~2024 22:56:37",
-                    "size": 15423,
+                    "modified": "12~06~2024 11:41:01",
+                    "size": "17011",
                     "type": ".js"
                 }
             ]
@@ -56,23 +56,33 @@
             "path": "-BIOS\\font",
             "parentPath": "-BIOS",
             "size": " ",
-            "modified": "12~03~2024 20:38:35",
+            "modified": "12~05~2024 22:56:25",
             "children": [
                 {
-                    "name": "MSW98UI-Bold.woff2",
-                    "path": "-BIOS\\font\\MSW98UI-Bold.woff2",
+                    "name": "MorePerfectDOSVGA.woff2",
+                    "path": "-BIOS\\font\\MorePerfectDOSVGA.woff2",
                     "parentPath": "-BIOS\\font",
-                    "modified": "12~03~2024 20:38:35",
-                    "size": 13988,
+                    "modified": "12~05~2024 22:25:04",
+                    "size": "17240",
                     "type": ".woff2"
-                },
+                }
+            ]
+        },
+        {
+            "name": "Kernel",
+            "type": "folder",
+            "path": "-BIOS\\Kernel",
+            "parentPath": "-BIOS",
+            "size": " ",
+            "modified": "12~05~2024 23:04:49",
+            "children": [
                 {
-                    "name": "MSW98UI-Regular.woff2",
-                    "path": "-BIOS\\font\\MSW98UI-Regular.woff2",
-                    "parentPath": "-BIOS\\font",
-                    "modified": "12~03~2024 20:38:35",
-                    "size": 50004,
-                    "type": ".woff2"
+                    "name": "Kernel.js",
+                    "path": "-BIOS\\Kernel\\Kernel.js",
+                    "parentPath": "-BIOS\\Kernel",
+                    "modified": "12~06~2024 11:41:01",
+                    "size": "2187",
+                    "type": ".js"
                 }
             ]
         },
@@ -80,16 +90,16 @@
             "name": "root.css",
             "path": "-BIOS\\root.css",
             "parentPath": "-BIOS",
-            "modified": "12~03~2024 20:38:35",
-            "size": 571,
+            "modified": "12~05~2024 22:56:36",
+            "size": "406",
             "type": ".css"
         },
         {
             "name": "rootVariables.css",
             "path": "-BIOS\\rootVariables.css",
             "parentPath": "-BIOS",
-            "modified": "12~03~2024 20:38:35",
-            "size": 250,
+            "modified": "12~05~2024 22:28:51",
+            "size": "302",
             "type": ".css"
         },
         {
@@ -105,15 +115,15 @@
                     "path": "-BIOS\\Trays\\tray.css",
                     "parentPath": "-BIOS\\Trays",
                     "modified": "12~03~2024 20:38:35",
-                    "size": 104,
+                    "size": "104",
                     "type": ".css"
                 },
                 {
                     "name": "Tray.js",
                     "path": "-BIOS\\Trays\\Tray.js",
                     "parentPath": "-BIOS\\Trays",
-                    "modified": "12~03~2024 22:56:37",
-                    "size": 6783,
+                    "modified": "12~06~2024 11:41:01",
+                    "size": "6707",
                     "type": ".js"
                 }
             ]

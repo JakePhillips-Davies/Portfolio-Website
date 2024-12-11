@@ -110,8 +110,7 @@ class tray {
 *  █████     █████ █████   █████ █████ █████  ░░█████
 * ░░░░░     ░░░░░ ░░░░░   ░░░░░ ░░░░░ ░░░░░    ░░░░░ 
 */
-const masterTray : tray = new tray("masterTray", document.getElementById("ROOT"));
-let masterTrayLoaded : boolean = true;
+
 
 
 
@@ -150,3 +149,28 @@ if (false) {
     
 }
 /*------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let TRAY_DONE_LOADING = true;

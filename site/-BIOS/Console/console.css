@@ -22,7 +22,7 @@ pre {
     margin: 0;
     padding: 0;
 
-    font-family:  'MSW98UI', Tahoma, sans-serif;
+    font-family: var(--root-font-family);
     font-size: var(--root-font-size);
     font-weight: normal;
     color: var(--root-font-colour);
@@ -51,7 +51,7 @@ input {
 
     border: none;
 
-    font-family:  'MSW98UI', Tahoma, sans-serif;
+    font-family: var(--root-font-family);
     font-size: var(--root-font-size);
     font-weight: normal;
     color: var(--root-font-colour);

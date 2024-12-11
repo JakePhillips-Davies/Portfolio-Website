@@ -68,8 +68,6 @@ class tray {
 *  █████     █████ █████   █████ █████ █████  ░░█████
 * ░░░░░     ░░░░░ ░░░░░   ░░░░░ ░░░░░ ░░░░░    ░░░░░
 */
-const masterTray = new tray("masterTray", document.getElementById("ROOT"));
-let masterTrayLoaded = true;
 /**
 *  ███████████ ██████████  █████████  ███████████ ██████████ ███████████
 * ░█░░░███░░░█░░███░░░░░█ ███░░░░░███░█░░░███░░░█░░███░░░░░█░░███░░░░░███
@@ -90,4 +88,5 @@ if (false) {
     console.log(tray.SearchByID("test1"));
     console.log(tray.SearchByID("test1").GetTrayElement());
 }
-/*------------------------------------------------------*/ 
+/*------------------------------------------------------*/
+let TRAY_DONE_LOADING = true;

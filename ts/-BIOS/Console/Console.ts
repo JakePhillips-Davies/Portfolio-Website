@@ -39,6 +39,9 @@ class consoleObj {
     public GetInput() : HTMLInputElement {return this.input;}
 
     private currentDirectory : any;
+    public CurrentDirectory() : any {return this.currentDirectory;}
+    public CurrentPath() : string {return this.currentDirectory.path;}
+    public SetDirectory(newDir_ : any) {this.currentDirectory = newDir_;}
 
     private runningCommand : boolean = false;
 
@@ -59,8 +62,9 @@ class consoleObj {
 
         // Add the input field
         let consoleInputFieldElement : Element = document.createElement("inputField");
-        consoleInputFieldElement.innerHTML = "<pre>" + this.FormatConsolePath() + "</pre>";
+        consoleInputFieldElement.innerHTML = "<pre> </pre>";
         this.inputField = this.element.appendChild(consoleInputFieldElement);
+        this.FormatConsolePath();
 
         // Add the input itself
         let consoleInputElement : HTMLInputElement = document.createElement("input");
@@ -76,6 +80,8 @@ class consoleObj {
         let consoleTextElement : Element = document.createElement("pre");
         consoleTextElement.innerHTML = "";
         this.outputField = this.element.appendChild(consoleTextElement);
+        
+        this.PrintLn("");
     }
 
 
@@ -85,8 +91,11 @@ class consoleObj {
     // ░█░█░█▀▀░░█░░█▀█░█░█░█░█░▀▀█
     // ░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀▀░░▀▀▀
     //
-    private FormatConsolePath() : string {
+    private GetConsolePath() {
         return this.currentDirectory.path + consoleObj.consoleFlair
+    }
+    public FormatConsolePath() {
+        this.inputField.getElementsByTagName("pre")[0].innerHTML = this.GetConsolePath();
     }
 
     public RunCommand(commandFull_ : string) {
@@ -96,70 +105,30 @@ class consoleObj {
 
         this.runningCommand = true;
 
-        this.PrintLn(this.FormatConsolePath() + commandFull_);
 
-        let commandSplit : Array<string> = commandFull_.split(/\s+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/); // stole from stack overflow somewhere, I hate regex
+        //
+        // Run command
+        //
 
-        //console.log(commandSplit);
+        this.PrintLn(this.GetConsolePath() + commandFull_);
 
-        switch (commandSplit[0].toLowerCase()) {
-            case "dir":
-                if (commandSplit.length <= 1) { // if only dir
-                    this.PrintDirectory(this.currentDirectory.path);
-                }else{ 
-                    let inputtedPath = commandSplit[1].replaceAll('"', "");
+                                                            // stole from stack overflow somewhere, I hate regex
+        let commandSplit : Array<string> = commandFull_.split(/\s+(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)/); 
 
-                    if (inputtedPath.toLowerCase() == "-c\\") {
-                        this.PrintDirectory(C_DRIVE.path);
-                    }
-                    else if (inputtedPath.toLowerCase().includes("-c\\")) { // changes based on whether the user calls -c\... or just ...
-                        this.PrintDirectory(inputtedPath);
-                    }
-                    else {
-                        this.PrintDirectory(this.currentDirectory.path + "\\" + inputtedPath);
-                    }
-                }
-                break;
-
-            case "cd":
-                if (commandSplit.length <= 1) { // if only dir
-                    this.PrintLn(this.currentDirectory.path);
-                }else{ 
-                    let inputtedPath = commandSplit[1].replaceAll('"', "");
-
-                    if (inputtedPath.toLowerCase() == "-c\\") {
-                        this.currentDirectory = GetDirectoryByExactPath(C_DRIVE.path);
-                    }
-                    else if (inputtedPath.toLowerCase().includes("-c\\")) { // changes based on whether the user calls -c\... or just ...
-                        this.currentDirectory = GetDirectoryByExactPath(inputtedPath);
-                    }
-                    else {
-                        this.currentDirectory = GetDirectoryByExactPath(this.currentDirectory.path + "\\" + inputtedPath);
-                    }
-                }
-                this.inputField.getElementsByTagName("pre")[0].innerHTML = this.FormatConsolePath();
-                break;
-            
-            case "cd..":
-                if (this.currentDirectory.parentPath == "") {
-                    this.PrintLn("Error: cannot go higher");
-                }
-                else {
-                    this.currentDirectory = GetDirectoryByExactPath(this.currentDirectory.parentPath);
-                    this.inputField.getElementsByTagName("pre")[0].innerHTML = this.FormatConsolePath();
-                }
-                break;
-
-            case "help":
-                this.PrintLn("dir [directory] : print contents of relative directory");
-                break;
+        let command = commandSplit[0].toLowerCase();
         
-            default:
-                this.PrintLn("Error: command not recognised");
-                break;
+        if (commandMap.get(command) != null) {
+            commandMap.get(command)[0] (commandSplit, this);
+        }else {
+            this.PrintLn("Error: command not found");
         }
-
+        
         this.PrintLn("");
+
+        //
+        // 
+        //
+
 
         this.runningCommand = false;
     }
@@ -183,34 +152,37 @@ class consoleObj {
         }
         
         this.PrintLn(" ");
-        this.PrintLn(" Directory of " + inputDirectory.path);
+        this.PrintLn("   Directory of " + inputDirectory.path);
         this.PrintLn(" ");
 
         //counters
         let fileNum : number = 0;
         let folderNum : number = 0;
         
-        inputDirectory.children.forEach(childDirectory_ => { //Yea I hate this too lol, cba doing it better
-            let name = "<span style=\"min-width:calc(var(--root-font-size)*10);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + childDirectory_.name + "</span>";
-            let size = "<span style=\"min-width:calc(var(--root-font-size)*5);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + childDirectory_.size + "</span>";
-            let modified = "<span style=\"min-width:calc(var(--root-font-size)*5);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + childDirectory_.modified + "</span>";
+        inputDirectory.children.forEach(childDirectory_ => {
+            let name : string = childDirectory_.name.padEnd(22, " ");
+            let size : string = childDirectory_.size.padEnd(10, " ");
+            let modified : string = childDirectory_.modified.padEnd(10, " ");
             
             let dirIndicatorString : string = " ";
             if (childDirectory_.type == "folder") {
-                dirIndicatorString = " &ltDIR&gt";
+                dirIndicatorString = " &ltDIR&gt ";
 
                 folderNum++;
             }else {
                 fileNum++;
             }
-
-            let dirIndicator = "<span style=\"min-width:calc(var(--root-font-size)*3);display:inline-block;margin-right:calc(var(--root-font-size)*1)\">" + dirIndicatorString + "</span>";
+            let dirIndicator : string = dirIndicatorString.padEnd(7, " ");
         
             this.PrintLn(name + dirIndicator + size + modified);
         });
         
-        this.PrintLn("                    " + fileNum + " File(s)");
-        this.PrintLn("                    " + folderNum + " Folder(s)");
+        this.PrintLn(fileNum.toString().padStart(22, " ") + " File(s)");
+        this.PrintLn(folderNum.toString().padStart(22, " ") + " Folder(s)");
+    }
+
+    public ClearOut() {
+        this.outputField.innerHTML = "";
     }
 
 
@@ -245,21 +217,6 @@ class consoleObj {
 // █▌                                                       ▐█
 // ███████████████████████████████████████████████████████████
 // Wait until the master tray is loaded before continuing
-let josh : consoleObj;
-
-new Promise((resolve) => {
-
-    let interval = setInterval(() => {
-        if(masterTrayLoaded) resolve(interval);
-    }, 100);
-
-}).
-// Then do the following...
-then(() => {
-    
-    josh = new consoleObj(masterTray.GetTrayElement());
-
-});
 
 
 
@@ -289,3 +246,161 @@ then(() => {
 // █▌                                                                                                                    ▐█
 // █▌                                                                                                                    ▐█
 // ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+const commandMap = new Map();
+
+
+// dir ...
+commandMap.set("dir", [ (arguements_ : Array<string>, console_ : consoleObj) => {
+
+    if (arguements_.length <= 1) { // if only dir
+        console_.PrintDirectory(console_.CurrentPath());
+    }else{ 
+        let inputtedPath = arguements_[1].replaceAll('"', "");
+
+        if (inputtedPath.toLowerCase() == "-c\\") {
+            console_.PrintDirectory(C_DRIVE.path);
+        }
+        else if (inputtedPath.toLowerCase() == "-bios\\") {
+            console_.PrintDirectory(BIOS.path);
+        }
+        else if (inputtedPath.toLowerCase().includes("-c\\") || inputtedPath.toLowerCase().includes("-bios\\")) { // changes based on whether the user calls -c\... or just ...
+            console_.PrintDirectory(inputtedPath);
+        }
+        else {
+            console_.PrintDirectory(console_.CurrentPath() + "\\" + inputtedPath);
+        }
+    }
+
+},
+ "dir [directory] : print contents of relative directory"
+]);
+
+
+// cd ...
+commandMap.set("cd", [ (arguements_ : Array<string>, console_ : consoleObj) => {
+
+    if (arguements_.length <= 1) { // if only dir
+        console_.PrintLn(console_.CurrentPath());
+    }else{ 
+        let inputtedPath = arguements_[1].replaceAll('"', "");
+
+        let tempDir : any = null;
+
+        if (inputtedPath.toLowerCase() == "-c\\") {
+            tempDir = GetDirectoryByExactPath(C_DRIVE.path);
+        }
+        else if (inputtedPath.toLowerCase() == "-bios\\") {
+            tempDir = GetDirectoryByExactPath(BIOS.path);
+        }
+        else if (inputtedPath.toLowerCase().includes("-c\\") || inputtedPath.toLowerCase().includes("-bios\\")) { // changes based on whether the user calls -c\... or just ...
+            tempDir = GetDirectoryByExactPath(inputtedPath);
+        }
+        else {
+            tempDir = GetDirectoryByExactPath(console_.CurrentPath() + "\\" + inputtedPath);
+        }
+
+        if (tempDir == null) {
+            console_.PrintLn("Error: directory not found");
+        } else {
+            console_.SetDirectory(tempDir);
+        }
+    }
+    console_.FormatConsolePath();
+
+},
+ "cd [directory] : go to relative directory"
+]);
+
+
+// cd..
+commandMap.set("cd..", [ (arguements_ : Array<string>, console_ : consoleObj) => {
+
+    if (console_.CurrentDirectory().parentPath == "") {
+        console_.PrintLn("Error: cannot go higher");
+    }
+    else {
+        console_.SetDirectory( GetDirectoryByExactPath(console_.CurrentDirectory().parentPath) );
+        console_.FormatConsolePath();
+    }
+
+},
+ "cd.. : go up a directory"
+]);
+
+
+// help
+commandMap.set("help", [ (arguements_ : Array<string>, console_ : consoleObj) => {
+
+    console_.PrintLn(" ");
+
+    commandMap.forEach( (value, key, map) => {
+        console_.PrintLn(value[1]);
+    })
+
+},
+ "help : print all commands"
+]);
+
+
+// clear
+commandMap.set("clear", [ (arguements_ : Array<string>, console_ : consoleObj) => {
+
+    console_.ClearOut();
+
+},
+ "clear : clear the terminal"
+]);
+
+
+// run
+commandMap.set("run", [ (arguements_ : Array<string>, console_ : consoleObj) => {
+    
+    if (arguements_.length <= 1) return;
+
+    let fileToRun : string = arguements_[1];
+
+    fileToRun = fileToRun.replace(".js", "");
+
+    try {
+        eval(fileToRun + '(console_, arguements_)');
+    } catch (error) {
+        console_.PrintLn(error);
+    }
+
+},
+ "clear : clear the terminal"
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let CONSOLE_DONE_LOADING = true;

@@ -38,7 +38,7 @@ def create_folder_structure_json(path_, parentPath):
    										'path': os.path.relpath(path_) + "\\" + entry,
 										'parentPath': path_,
 										'modified': time.strftime("%m~%d~%Y %H:%M:%S", time.gmtime(os.path.getmtime(entry_path))),
-										'size': os.path.getsize(entry_path),
+										'size': str(os.path.getsize(entry_path)),
                               			'type': os.path.splitext(entry)[1]})
 
 	return result

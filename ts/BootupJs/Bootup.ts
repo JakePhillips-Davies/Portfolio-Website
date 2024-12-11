@@ -18,21 +18,55 @@ const HTMLHead : Element = document.getElementById("mainHead")
 let BIOS : any;
 let C_DRIVE : any;
 
-
+let BIOS_DONE_LOADING = false;
 fetch("dirJSONs/Bios.json").then(function (result) {
     result.json().then(function (json) {
         BIOS = json;
 
-        DirectoryForEachRecursive(BIOS, BootupFileSetup);
+        BIOS_DONE_LOADING = true;
     });
 });
+let C_DONE_LOADING = false;
 fetch("dirJSONs/C-Drive.json").then(function (result) {
     result.json().then(function (json) {
         C_DRIVE = json;
+
+        C_DONE_LOADING = true;
     });
 });
 
 
+
+new Promise((resolve) => {
+
+    let interval = setInterval(() => {
+        if(BIOS_DONE_LOADING && C_DONE_LOADING) resolve(interval);
+    }, 100);
+
+}).
+// Then do the following...
+then(() => {
+    
+    DirectoryForEachRecursive(BIOS, BootupFileSetup);
+
+    new Promise((resolve) => { // now to load the kernel AFTER everything else... I hate this too
+
+        let interval = setInterval(() => {
+            if(TRAY_DONE_LOADING && CONSOLE_DONE_LOADING) resolve(interval);
+        }, 100);
+    
+    }).
+    // Then do the following...
+    then(() => {    
+        let scriptElement = document.createElement("script");
+    
+        scriptElement.setAttribute("src", "-BIOS/Kernel/Kernel.js");
+        scriptElement.setAttribute("type", "text/javascript");
+        scriptElement.setAttribute("async", "false");
+        
+        HTMLHead.appendChild(scriptElement);
+    });
+});
 
 
 
@@ -95,6 +129,7 @@ function GetDirectoryByExactPath(path_ : string) : any {
         }
     }
     search(C_DRIVE);
+    search(BIOS);
 
     return resultDir;
 }
@@ -103,6 +138,10 @@ function GetDirectoryByExactPath(path_ : string) : any {
 function BootupFileSetup(directory_ : any) {
     switch (directory_.type) {
         case ".js":
+            if (directory_.name == "Kernel.js") {
+                break;
+            }
+
             let scriptElement = document.createElement("script");
 
             scriptElement.setAttribute("src", directory_.path);
