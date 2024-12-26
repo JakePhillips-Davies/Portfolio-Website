@@ -1,3 +1,4 @@
+import { Kernel } from "./Kernel.js";
 // ███████████████████████████████████████████████████████████
 // █▌                                                       ▐█
 // █▌                                                       ▐█
@@ -37,21 +38,11 @@ new Promise((resolve) => {
 }).
     // Then do the following...
     then(() => {
-    DirectoryForEachRecursive(BIOS, BootupFileSetup);
-    new Promise((resolve) => {
-        let interval = setInterval(() => {
-            if (TRAY_DONE_LOADING && CONSOLE_DONE_LOADING)
-                resolve(interval);
-        }, 100);
-    }).
-        // Then do the following...
-        then(() => {
-        let scriptElement = document.createElement("script");
-        scriptElement.setAttribute("src", "-BIOS/Kernel/Kernel.js");
-        scriptElement.setAttribute("type", "text/javascript");
-        scriptElement.setAttribute("async", "false");
-        HTMLHead.appendChild(scriptElement);
-    });
+    SetupCSS(C_DRIVE);
+    SetupCSS(BIOS);
+    Kernel.AddDrive(C_DRIVE);
+    Kernel.AddDrive(BIOS);
+    Kernel.Startup();
 });
 // ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // █▌                                                                                                                    ▐█
@@ -67,65 +58,18 @@ new Promise((resolve) => {
 // █▌                                                                                                                    ▐█
 // █▌                                                                                                                    ▐█
 // ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
-function DirectoryForEachRecursive(directory_, function_) {
+function SetupCSS(directory_) {
     directory_.children.forEach(directory => {
         if (directory.children != null) {
-            function_(directory);
-            DirectoryForEachRecursive(directory, function_);
+            SetupCSS(directory);
         }
         else {
-            function_(directory);
-        }
-    });
-}
-function DirectoryForEach(directory_, function_) {
-    directory_.children.forEach(directory => {
-        function_(directory);
-    });
-}
-function GetDirectoryByExactPath(path_) {
-    let resultDir = null;
-    let path = path_.toLowerCase();
-    function search(directory_) {
-        if (path === directory_.path.toLowerCase()) {
-            resultDir = directory_;
-        }
-        else {
-            directory_.children.forEach(directory => {
-                if (directory.children != null) {
-                    search(directory);
-                }
-                else {
-                    if (path === directory_.path.toLowerCase()) {
-                        resultDir = directory_;
-                    }
-                }
-            });
-        }
-    }
-    search(C_DRIVE);
-    search(BIOS);
-    return resultDir;
-}
-function BootupFileSetup(directory_) {
-    switch (directory_.type) {
-        case ".js":
-            if (directory_.name == "Kernel.js") {
-                break;
+            if (directory.type == ".css") {
+                let styleElement = document.createElement("link");
+                styleElement.setAttribute("href", directory.path);
+                styleElement.setAttribute("rel", "stylesheet");
+                HTMLHead.appendChild(styleElement);
             }
-            let scriptElement = document.createElement("script");
-            scriptElement.setAttribute("src", directory_.path);
-            scriptElement.setAttribute("type", "text/javascript");
-            scriptElement.setAttribute("async", "false");
-            HTMLHead.appendChild(scriptElement);
-            break;
-        case ".css":
-            let styleElement = document.createElement("link");
-            styleElement.setAttribute("href", directory_.path);
-            styleElement.setAttribute("rel", "stylesheet");
-            HTMLHead.appendChild(styleElement);
-            break;
-        default:
-            break;
-    }
+        }
+    });
 }

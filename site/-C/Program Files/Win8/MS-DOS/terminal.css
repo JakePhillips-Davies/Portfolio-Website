@@ -1,4 +1,4 @@
-console {
+terminal {
     margin: 0;
     padding: 0;
     padding-bottom: 1%;
@@ -14,9 +14,9 @@ console {
 }
 
 /*
-* All elements within a console
+* All elements within a terminal
 */
-console {
+terminal {
 
 pre {
     margin: 0;
