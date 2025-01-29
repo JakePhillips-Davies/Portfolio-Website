@@ -1,6 +1,6 @@
 import { Tray } from "../Sys16/Tray.js";
 import { DOSBoot } from "../../-C/Program Files/Win8/MS-DOS/DOSBoot.js";
-import { Terminal } from "../../-C/Program Files/Win8/MS-DOS/Terminal.js";
+import { WinBoot } from "../../-C/Program Files/Win8/System/WinBoot.js";
 
 export class Kernel {
     //
@@ -30,6 +30,11 @@ export class Kernel {
         public static Tray() : Tray { return this.masterTray }
 
 
+    public static ShutDown() {
+        this.masterTray.GetTrayElement().innerHTML = "";
+    }
+
+
 
     // 
     // ░█▄█░█▀█░▀█▀░█▀█
@@ -40,7 +45,9 @@ export class Kernel {
 
         this.masterTray = new Tray("masterTray", document.getElementById("ROOT"));
 
-        DOSBoot.Boot();
+        //DOSBoot.Boot();
+
+        WinBoot.Boot();
 
     }
 }

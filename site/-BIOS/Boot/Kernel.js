@@ -1,5 +1,5 @@
 import { Tray } from "../Sys16/Tray.js";
-import { DOSBoot } from "../../-C/Program Files/Win8/MS-DOS/DOSBoot.js";
+import { WinBoot } from "../../-C/Program Files/Win8/System/WinBoot.js";
 export class Kernel {
     //
     //░█▀▀░▀█▀░█▀█░▀█▀░▀█▀░█▀▀░█▀▀
@@ -20,6 +20,9 @@ export class Kernel {
     //==
     static masterTray = null;
     static Tray() { return this.masterTray; }
+    static ShutDown() {
+        this.masterTray.GetTrayElement().innerHTML = "";
+    }
     // 
     // ░█▄█░█▀█░▀█▀░█▀█
     // ░█░█░█▀█░░█░░█░█
@@ -27,6 +30,7 @@ export class Kernel {
     //
     static Startup() {
         this.masterTray = new Tray("masterTray", document.getElementById("ROOT"));
-        DOSBoot.Boot();
+        //DOSBoot.Boot();
+        WinBoot.Boot();
     }
 }

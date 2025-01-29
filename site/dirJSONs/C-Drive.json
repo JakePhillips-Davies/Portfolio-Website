@@ -166,7 +166,7 @@
                     "path": "-C\\Program Files\\Win8",
                     "parentPath": "-C\\Program Files",
                     "size": " ",
-                    "modified": "12~23~2024 21:40:02",
+                    "modified": "12~26~2024 20:56:22",
                     "children": [
                         {
                             "name": "Fonts",
@@ -196,9 +196,27 @@
                                     "name": "winFonts.css",
                                     "path": "-C\\Program Files\\Win8\\Fonts\\winFonts.css",
                                     "parentPath": "-C\\Program Files\\Win8\\Fonts",
-                                    "modified": "12~22~2024 18:43:05",
-                                    "size": "261",
+                                    "modified": "12~26~2024 20:52:21",
+                                    "size": "292",
                                     "type": ".css"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Icons",
+                            "type": "folder",
+                            "path": "-C\\Program Files\\Win8\\Icons",
+                            "parentPath": "-C\\Program Files\\Win8",
+                            "size": " ",
+                            "modified": "12~26~2024 20:56:53",
+                            "children": [
+                                {
+                                    "name": "windows-0.png",
+                                    "path": "-C\\Program Files\\Win8\\Icons\\windows-0.png",
+                                    "parentPath": "-C\\Program Files\\Win8\\Icons",
+                                    "modified": "12~26~2024 20:56:48",
+                                    "size": "458",
+                                    "type": ".png"
                                 }
                             ]
                         },
@@ -214,7 +232,7 @@
                                     "name": "CommonCommands.js",
                                     "path": "-C\\Program Files\\Win8\\MS-DOS\\CommonCommands.js",
                                     "parentPath": "-C\\Program Files\\Win8\\MS-DOS",
-                                    "modified": "12~24~2024 20:18:14",
+                                    "modified": "12~27~2024 01:59:29",
                                     "size": "5302",
                                     "type": ".js"
                                 },
@@ -222,7 +240,7 @@
                                     "name": "DOSBoot.js",
                                     "path": "-C\\Program Files\\Win8\\MS-DOS\\DOSBoot.js",
                                     "parentPath": "-C\\Program Files\\Win8\\MS-DOS",
-                                    "modified": "12~24~2024 20:18:14",
+                                    "modified": "12~27~2024 01:59:29",
                                     "size": "256",
                                     "type": ".js"
                                 },
@@ -230,7 +248,7 @@
                                     "name": "RunJs.js",
                                     "path": "-C\\Program Files\\Win8\\MS-DOS\\RunJs.js",
                                     "parentPath": "-C\\Program Files\\Win8\\MS-DOS",
-                                    "modified": "12~24~2024 20:18:14",
+                                    "modified": "12~27~2024 01:59:29",
                                     "size": "516",
                                     "type": ".js"
                                 },
@@ -246,9 +264,119 @@
                                     "name": "Terminal.js",
                                     "path": "-C\\Program Files\\Win8\\MS-DOS\\Terminal.js",
                                     "parentPath": "-C\\Program Files\\Win8\\MS-DOS",
-                                    "modified": "12~24~2024 20:18:14",
+                                    "modified": "12~27~2024 01:59:29",
                                     "size": "6213",
                                     "type": ".js"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "System",
+                            "type": "folder",
+                            "path": "-C\\Program Files\\Win8\\System",
+                            "parentPath": "-C\\Program Files\\Win8",
+                            "size": " ",
+                            "modified": "12~27~2024 01:39:20",
+                            "children": [
+                                {
+                                    "name": "Taskbar.js",
+                                    "path": "-C\\Program Files\\Win8\\System\\Taskbar.js",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "modified": "12~27~2024 01:59:29",
+                                    "size": "1936",
+                                    "type": ".js"
+                                },
+                                {
+                                    "name": "taskbarClock",
+                                    "type": "folder",
+                                    "path": "-C\\Program Files\\Win8\\System\\taskbarClock",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "size": " ",
+                                    "modified": "12~27~2024 01:59:59",
+                                    "children": [
+                                        {
+                                            "name": "taskbarClock.css",
+                                            "path": "-C\\Program Files\\Win8\\System\\taskbarClock\\taskbarClock.css",
+                                            "parentPath": "-C\\Program Files\\Win8\\System\\taskbarClock",
+                                            "modified": "12~26~2024 21:15:03",
+                                            "size": "273",
+                                            "type": ".css"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Time.js",
+                                    "path": "-C\\Program Files\\Win8\\System\\Time.js",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "modified": "12~27~2024 01:59:29",
+                                    "size": "1255",
+                                    "type": ".js"
+                                },
+                                {
+                                    "name": "WinBoot.js",
+                                    "path": "-C\\Program Files\\Win8\\System\\WinBoot.js",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "modified": "12~27~2024 01:59:29",
+                                    "size": "330",
+                                    "type": ".js"
+                                },
+                                {
+                                    "name": "winDesktop.css",
+                                    "path": "-C\\Program Files\\Win8\\System\\winDesktop.css",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "modified": "12~26~2024 20:43:58",
+                                    "size": "126",
+                                    "type": ".css"
+                                },
+                                {
+                                    "name": "WinDesktop.js",
+                                    "path": "-C\\Program Files\\Win8\\System\\WinDesktop.js",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "modified": "12~27~2024 01:59:29",
+                                    "size": "1779",
+                                    "type": ".js"
+                                },
+                                {
+                                    "name": "windows.css",
+                                    "path": "-C\\Program Files\\Win8\\System\\windows.css",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "modified": "12~26~2024 20:38:21",
+                                    "size": "289",
+                                    "type": ".css"
+                                },
+                                {
+                                    "name": "winTaskbar.css",
+                                    "path": "-C\\Program Files\\Win8\\System\\winTaskbar.css",
+                                    "parentPath": "-C\\Program Files\\Win8\\System",
+                                    "modified": "12~26~2024 21:13:48",
+                                    "size": "2430",
+                                    "type": ".css"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "WinStyle",
+                            "type": "folder",
+                            "path": "-C\\Program Files\\Win8\\WinStyle",
+                            "parentPath": "-C\\Program Files\\Win8",
+                            "size": " ",
+                            "modified": "12~26~2024 20:45:58",
+                            "children": [
+                                {
+                                    "name": "desktop.css",
+                                    "path": "-C\\Program Files\\Win8\\WinStyle\\desktop.css",
+                                    "parentPath": "-C\\Program Files\\Win8\\WinStyle",
+                                    "modified": "12~26~2024 20:45:14",
+                                    "size": "58",
+                                    "type": ".css"
+                                },
+                                {
+                                    "name": "windows.css",
+                                    "path": "-C\\Program Files\\Win8\\WinStyle\\windows.css",
+                                    "parentPath": "-C\\Program Files\\Win8\\WinStyle",
+                                    "modified": "12~26~2024 20:51:45",
+                                    "size": "2051",
+                                    "type": ".css"
                                 }
                             ]
                         }

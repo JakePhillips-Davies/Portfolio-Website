@@ -1,0 +1,40 @@
+windows {
+    /*          Colours          */
+    /*---------------------------*/
+        --colour-font: rgb(0, 0, 0);
+        --colour-background-1: hsl(210, 7%, 77%);
+        --colour-background-2: rgb(128, 128, 128);
+        --colour-background-3: rgb(0, 0, 0);
+        --colour-bevel-1: hsl(from var(--colour-background-1) h s calc(l + 21));
+        --colour-bevel-2: hsl(from var(--colour-background-1) h s calc(l - 70));
+        --colour-bevel-3: var(--colour-background-1);
+        --colour-bevel-4: hsl(from var(--colour-background-1) h s calc(l - 20));
+        --colour-highlight: rgb(0, 0, 168);
+    /*---------------------------*/
+
+    
+    /*          Bevel          */
+    /*-------------------------*/
+        --bevel-outset: 
+        calc(-1*var(--bevel-size)/2) calc(-1*var(--bevel-size)/2) var(--colour-bevel-2) inset,
+        calc(1*var(--bevel-size)/2) calc(1*var(--bevel-size)/2) var(--colour-bevel-1) inset,
+        calc(-1*var(--bevel-size)) calc(-1*var(--bevel-size)) var(--colour-bevel-4) inset,
+        calc(1*var(--bevel-size)) calc(1*var(--bevel-size)) var(--colour-bevel-3) inset
+        ;
+        --bevel-inset: 
+            calc(-1*var(--bevel-size)/2) calc(-1*var(--bevel-size)/2) var(--colour-bevel-1) inset,
+            calc(1*var(--bevel-size)/2) calc(1*var(--bevel-size)/2) var(--colour-bevel-2) inset,
+            calc(-1*var(--bevel-size)) calc(-1*var(--bevel-size)) var(--colour-bevel-3) inset,
+            calc(1*var(--bevel-size)) calc(1*var(--bevel-size)) var(--colour-bevel-4) inset
+        ;
+        --bevel-inset-light: 
+            calc(-1*var(--bevel-size)/2) calc(-1*var(--bevel-size)/2) var(--colour-bevel-1) inset,
+            calc(1*var(--bevel-size)/2) calc(1*var(--bevel-size)/2) var(--colour-bevel-4) inset
+        ;
+        --bevel-spacer: 
+            calc(-1*var(--bevel-size)/2) 0 var(--colour-bevel-1) inset,
+            calc(1*var(--bevel-size)/2) 0 var(--colour-bevel-4) inset
+        ;
+        --bevel-size: 0.2rem;
+    /*-------------------------*/
+}
