@@ -1,5 +1,26 @@
 [
     {
+        "url": "Git.png",
+        "type": "link",
+        "other": "Github",
+        "link": "https://github.com/JakePhillips-Davies/Interplanetary-Postie-GD",
+        "location": "assets/desktop/"
+    },
+    {
+        "url": "YouTube.png",
+        "type": "link",
+        "other": "Orbital mechanics demo",
+        "link": "https://youtu.be/kjNxhVOzv8g",
+        "location": "icons/"
+    },
+    {
+        "url": "YouTube.png",
+        "type": "link",
+        "other": "Terrain generation demo",
+        "link": "https://youtu.be/CAhyY9V9_aE",
+        "location": "icons/"
+    },
+    {
         "url": "Earth-Terrain-test-1.png",
         "type": "png",
         "other": "",
