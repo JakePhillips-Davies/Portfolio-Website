@@ -1,0 +1,38 @@
+[
+    {
+        "url": "Earth-Terrain-test-1.png",
+        "type": "png",
+        "other": "",
+        "location": "assets/game_Projects/Interplanetary_Postie/"
+    },
+    {
+        "url": "Earth-space.png",
+        "type": "png",
+        "other": "",
+        "location": "assets/game_Projects/Interplanetary_Postie/"
+    },
+    {
+        "url": "Lunar-accident.png",
+        "type": "png",
+        "other": "",
+        "location": "assets/game_Projects/Interplanetary_Postie/"
+    },
+    {
+        "url": "Lunar-terrain-test-1.png",
+        "type": "png",
+        "other": "",
+        "location": "assets/game_Projects/Interplanetary_Postie/"
+    },
+    {
+        "url": "Moon-space.png",
+        "type": "png",
+        "other": "",
+        "location": "assets/game_Projects/Interplanetary_Postie/"
+    },
+    {
+        "url": "Orbits.png",
+        "type": "png",
+        "other": "",
+        "location": "assets/game_Projects/Interplanetary_Postie/"
+    }
+]

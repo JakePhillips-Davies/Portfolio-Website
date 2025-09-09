@@ -10,5 +10,11 @@
         "type": "folder",
         "other": "directory_open_file_mydocs-5.png",
         "location": "assets/json/nBodyGame.json"
+    },
+    {
+        "url": "Interplanetary Postie",
+        "type": "folder",
+        "other": "directory_open_file_mydocs-5.png",
+        "location": "assets/json/interplanetaryPostie.json"
     }
 ]
